@@ -1,8 +1,4 @@
-huhuhu
-
-
-
-# 🏫 PPSB (Penerimaan Peserta Santri Baru) - AL-MUKMIN
+🏫 PPSB (Penerimaan Peserta Santri Baru) - AL-MUKMIN
 
 Sistem informasi penerimaan peserta santri baru yang dikembangkan untuk pesantren AL-MUKMIN. Sistem ini mengelola seluruh proses pendaftaran dari formulir online hingga seleksi dan pembayaran.
 
