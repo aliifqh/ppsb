@@ -1,5 +1,5 @@
 <div align="center">
-a
+
 # 🏫 PPSB AL-MUKMIN
 ### Sistem Penerimaan Peserta Santri Baru
 
