@@ -1,6 +1,5 @@
 <div align="center">
 
-TES GIT BRANCH
 # 🏫 PPSB AL-MUKMIN
 ### Sistem Penerimaan Peserta Santri Baru
 

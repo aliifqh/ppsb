@@ -1,6 +1,6 @@
 <!-- Step 1: Data Santri -->
 <div x-show="currentStep === 1" class="space-y-6">
-    <h2 class="text-2xl font-semibaasaold text-teal-700">Data Calon Santri</h2>
+    <h2 class="text-2xl font-semibold text-teal-700">Data Calon Santri</h2>
 
     <!-- Unit Selection -->
     <div class="space-y-2">
