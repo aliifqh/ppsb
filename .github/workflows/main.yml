@@ -31,7 +31,7 @@ jobs:
           port: 21                                     # default FTP
           protocol: ftps                               # gunakan 'sftp' kalau pakai SSH key
           local_dir: ./                                # folder yang dikirim (root Laravel project)
-          remote_dir: /public_html/                    # path tujuan di server
+          remote_dir: /public_html/ppsb                # path tujuan di server
           create_remote_dir: true
           verify_cert: false                           # set false kalau cert SSL bermasalah
           dry_run: false
