@@ -1,165 +1,246 @@
-🏫 PPSB (Penerimaan Peserta Santri Baru) - AL-MUKMIN
+<div align="center">
 
-Sistem informasi penerimaan peserta santri baru yang dikembangkan untuk pesantren AL-MUKMIN. Sistem ini mengelola seluruh proses pendaftaran dari formulir online hingga seleksi dan pembayaran.
+# 🏫 PPSB AL-MUKMIN
+### Sistem Penerimaan Peserta Santri Baru
 
-## 📋 Daftar Isi
+[![Laravel](https://img.shields.io/badge/Laravel-12.x-FF2D20?style=for-the-badge&logo=laravel)](https://laravel.com)
+[![Vue.js](https://img.shields.io/badge/Vue.js-3.x-4FC08D?style=for-the-badge&logo=vue.js)](https://vuejs.org)
+[![PHP](https://img.shields.io/badge/PHP-8.2+-777BB4?style=for-the-badge&logo=php)](https://php.net)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.x-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com)
+[![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
 
-- [Fitur Utama](#-fitur-utama)
-- [Teknologi yang Digunakan](#-teknologi-yang-digunakan)
-- [Struktur Project](#-struktur-project)
-- [Instalasi](#-instalasi)
-- [Konfigurasi](#-konfigurasi)
-- [Penggunaan](#-penggunaan)
-- [API Documentation](#-api-documentation)
-- [Deployment](#-deployment)
-- [Kontribusi](#-kontribusi)
-- [Lisensi](#-lisensi)
+**Sistem informasi penerimaan peserta santri baru yang modern dan terintegrasi untuk pesantren AL-MUKMIN** 🚀
 
-## ✨ Fitur Utama
+[![GitHub stars](https://img.shields.io/github/stars/aliifqh/ppsb?style=social)](https://github.com/aliifqh/ppsb/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/aliifqh/ppsb?style=social)](https://github.com/aliifqh/ppsb/network)
+[![GitHub issues](https://img.shields.io/github/issues/aliifqh/ppsb)](https://github.com/aliifqh/ppsb/issues)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/aliifqh/ppsb)](https://github.com/aliifqh/ppsb/pulls)
 
-### 🎯 Area Publik
-- **Homepage** - Landing page dengan informasi pendaftaran
-- **Formulir Pendaftaran** - Form pendaftaran 4 tahap dengan validasi real-time
-- **Cek Status** - Login santri untuk melihat status pendaftaran
-- **Pembayaran Publik** - Upload bukti pembayaran tanpa login
+</div>
 
-### 👨‍🎓 Area Santri
-- **Dashboard Santri** - Overview status pendaftaran dan alur
-- **Data Pribadi** - Lihat dan edit data pendaftaran
-- **Pembayaran** - Status pembayaran dan upload bukti
-- **Ujian** - Informasi jadwal dan hasil tes masuk
-- **Print Dokumen** - Cetak formulir dan bukti pendaftaran
-- **Magic Login** - Login otomatis via token
+---
 
-### 👨‍💼 Area Admin
-- **Dashboard Admin** - Statistik pendaftaran dan monitoring
-- **Manajemen Santri** - CRUD data santri dengan soft delete
-- **Manajemen Pembayaran** - Verifikasi dan kelola pembayaran
-- **Manajemen Gelombang** - Atur periode pendaftaran
-- **Role & Permission** - Manajemen user dan hak akses
-- **Notifikasi** - Sistem notifikasi real-time
-- **WhatsApp Integration** - Kirim notifikasi otomatis
-- **Export Data** - Export data ke Excel/PDF
+## 📋 Table of Contents
 
-### 🔧 Fitur Teknis
-- **Multi-Provider WhatsApp** - Support 8 provider WhatsApp API
-- **File Management** - Upload dan preview dokumen
-- **Real-time Validation** - Validasi form dengan Alpine.js
-- **Responsive Design** - Mobile-first dengan Tailwind CSS
-- **Progressive Web App** - SPA dengan Vue.js dan Inertia
-- **Activity Logging** - Audit trail untuk semua aktivitas
+- [✨ Features](#-features)
+- [🛠 Tech Stack](#-tech-stack)
+- [🚀 Quick Start](#-quick-start)
+- [📱 Screenshots](#-screenshots)
+- [🏗 Architecture](#-architecture)
+- [🔧 Configuration](#-configuration)
+- [📖 Documentation](#-documentation)
+- [🤝 Contributing](#-contributing)
+- [📄 License](#-license)
 
-## 🛠 Teknologi yang Digunakan
+---
+
+## ✨ Features
+
+### 🎯 Public Area
+| Feature | Description | Status |
+|---------|-------------|--------|
+| 🏠 **Homepage** | Landing page dengan informasi pendaftaran | ✅ |
+| 📝 **Registration Form** | Form pendaftaran 4 tahap dengan validasi real-time | ✅ |
+| 🔍 **Status Check** | Login santri untuk melihat status pendaftaran | ✅ |
+| 💳 **Public Payment** | Upload bukti pembayaran tanpa login | ✅ |
+
+### 👨‍🎓 Student Portal
+| Feature | Description | Status |
+|---------|-------------|--------|
+| 📊 **Dashboard** | Overview status pendaftaran dan alur | ✅ |
+| 👤 **Personal Data** | Lihat dan edit data pendaftaran | ✅ |
+| 💰 **Payment** | Status pembayaran dan upload bukti | ✅ |
+| 📚 **Exam** | Informasi jadwal dan hasil tes masuk | ✅ |
+| 🖨️ **Print Documents** | Cetak formulir dan bukti pendaftaran | ✅ |
+| 🔐 **Magic Login** | Login otomatis via token | ✅ |
+
+### 👨‍💼 Admin Panel
+| Feature | Description | Status |
+|---------|-------------|--------|
+| 📈 **Dashboard** | Statistik pendaftaran dan monitoring | ✅ |
+| 👥 **Student Management** | CRUD data santri dengan soft delete | ✅ |
+| 💳 **Payment Management** | Verifikasi dan kelola pembayaran | ✅ |
+| 📅 **Wave Management** | Atur periode pendaftaran | ✅ |
+| 🔐 **Role & Permission** | Manajemen user dan hak akses | ✅ |
+| 🔔 **Notifications** | Sistem notifikasi real-time | ✅ |
+| 📱 **WhatsApp Integration** | Kirim notifikasi otomatis | ✅ |
+| 📊 **Data Export** | Export data ke Excel/PDF | ✅ |
+
+### 🔧 Technical Features
+| Feature | Description | Status |
+|---------|-------------|--------|
+| 📱 **Multi-Provider WhatsApp** | Support 8 provider WhatsApp API | ✅ |
+| 📁 **File Management** | Upload dan preview dokumen | ✅ |
+| ⚡ **Real-time Validation** | Validasi form dengan Alpine.js | ✅ |
+| 📱 **Responsive Design** | Mobile-first dengan Tailwind CSS | ✅ |
+| 🚀 **Progressive Web App** | SPA dengan Vue.js dan Inertia | ✅ |
+| 📝 **Activity Logging** | Audit trail untuk semua aktivitas | ✅ |
+
+---
+
+## 🛠 Tech Stack
 
 ### Backend
-- **Laravel 12** - PHP Framework
-- **PHP 8.2+** - Bahasa pemrograman
-- **MySQL/PostgreSQL** - Database
-- **Laravel Sanctum** - API Authentication
-- **Laravel Socialite** - Google OAuth
-- **Spatie Permission** - Role & Permission
-- **Laravel Excel** - Import/Export data
-- **Laravel DomPDF** - Generate PDF
-- **Livewire 3** - Real-time components
+![Laravel](https://img.shields.io/badge/Laravel-12.x-FF2D20?style=flat-square&logo=laravel)
+![PHP](https://img.shields.io/badge/PHP-8.2+-777BB4?style=flat-square&logo=php)
+![MySQL](https://img.shields.io/badge/MySQL-8.0+-4479A1?style=flat-square&logo=mysql)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-13+-336791?style=flat-square&logo=postgresql)
 
 ### Frontend
-- **Vue.js 3** - JavaScript Framework
-- **Inertia.js** - SPA without API
-- **Alpine.js** - Lightweight reactivity
-- **Tailwind CSS** - Utility-first CSS
-- **Vite** - Build tool
-- **SweetAlert2** - Beautiful alerts
-- **Chart.js** - Data visualization
-- **FilePond** - File upload
-- **Vue Router** - Client-side routing
+![Vue.js](https://img.shields.io/badge/Vue.js-3.x-4FC08D?style=flat-square&logo=vue.js)
+![Inertia.js](https://img.shields.io/badge/Inertia.js-2.x-000000?style=flat-square)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.x-38B2AC?style=flat-square&logo=tailwind-css)
+![Alpine.js](https://img.shields.io/badge/Alpine.js-3.x-8BC0D0?style=flat-square)
+![Vite](https://img.shields.io/badge/Vite-6.x-646CFF?style=flat-square&logo=vite)
 
 ### Third Party Services
-- **Google OAuth** - Social login
-- **WhatsApp API Providers**:
-  - Fonnte
-  - Wablas
-  - Woowa
-  - Dripsender
-  - Watzap
-  - Whacenter
-  - Whapi
-- **Jitsi Meet** - Video conference untuk ujian
+![Google OAuth](https://img.shields.io/badge/Google_OAuth-4285F4?style=flat-square&logo=google)
+![WhatsApp API](https://img.shields.io/badge/WhatsApp_API-25D366?style=flat-square&logo=whatsapp)
+![Jitsi Meet](https://img.shields.io/badge/Jitsi_Meet-97979A?style=flat-square&logo=jitsi)
 
-## 📁 Struktur Project
+### Development Tools
+![Composer](https://img.shields.io/badge/Composer-885630?style=flat-square&logo=composer)
+![npm](https://img.shields.io/badge/npm-CB3837?style=flat-square&logo=npm)
+![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker)
+
+---
+
+## 🚀 Quick Start
+
+### Prerequisites
+- [PHP 8.2+](https://php.net/downloads)
+- [Composer](https://getcomposer.org/download/)
+- [Node.js 18+](https://nodejs.org/)
+- [MySQL 8.0+](https://dev.mysql.com/downloads/) or [PostgreSQL 13+](https://www.postgresql.org/download/)
+
+### Installation
+
+```bash
+# 1. Clone repository
+git clone https://github.com/aliifqh/ppsb.git
+cd ppsb
+
+# 2. Install PHP dependencies
+composer install
+
+# 3. Install Node.js dependencies
+npm install
+
+# 4. Setup environment
+cp .env.example .env
+php artisan key:generate
+
+# 5. Configure database in .env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=ppsb_db
+DB_USERNAME=your_username
+DB_PASSWORD=your_password
+
+# 6. Run migrations and seeders
+php artisan migrate
+php artisan db:seed
+
+# 7. Build assets
+npm run build
+
+# 8. Setup storage link
+php artisan storage:link
+
+# 9. Start development server
+php artisan serve
+```
+
+### Development Commands
+
+```bash
+# Start development environment
+composer run dev
+
+# Run tests
+composer test
+
+# Code formatting
+composer format
+
+# Static analysis
+composer analyze
+```
+
+---
+
+## 📱 Screenshots
+
+<div align="center">
+
+### 🏠 Homepage
+![Homepage](https://via.placeholder.com/800x400/4F46E5/FFFFFF?text=Homepage+Screenshot)
+
+### 👨‍💼 Admin Dashboard
+![Admin Dashboard](https://via.placeholder.com/800x400/059669/FFFFFF?text=Admin+Dashboard)
+
+### 👨‍🎓 Student Portal
+![Student Portal](https://via.placeholder.com/800x400/DC2626/FFFFFF?text=Student+Portal)
+
+### 📱 Mobile Responsive
+![Mobile View](https://via.placeholder.com/400x600/7C3AED/FFFFFF?text=Mobile+View)
+
+</div>
+
+---
+
+## 🏗 Architecture
 
 ```
 ppsb/
-├── app/
-│   ├── Console/Commands/          # Artisan commands
-│   ├── Events/                    # Event classes
-│   ├── Exports/                   # Excel export classes
-│   ├── Helpers/                   # Helper functions
-│   ├── Http/
-│   │   ├── Controllers/           # Controller classes
-│   │   │   ├── Admin/            # Admin controllers
-│   │   │   ├── Auth/             # Authentication
-│   │   │   └── Santri/           # Santri controllers
-│   │   └── Middleware/           # Custom middleware
-│   ├── Models/                   # Eloquent models
-│   ├── Observers/                # Model observers
-│   ├── Providers/                # Service providers
-│   ├── Services/                 # Business logic services
-│   └── Traits/                   # Reusable traits
-├── config/                       # Configuration files
-├── database/
-│   ├── factories/                # Model factories
-│   ├── migrations/               # Database migrations
-│   └── seeders/                  # Database seeders
-├── public/                       # Public assets
-├── resources/
-│   ├── js/
-│   │   ├── components/           # Vue components
-│   │   │   ├── admin/           # Admin components
-│   │   │   ├── common/          # Shared components
-│   │   │   └── santri/          # Santri components
-│   │   ├── services/            # API services
-│   │   └── router.js            # Vue router
-│   ├── css/                     # Stylesheets
-│   └── views/                   # Blade templates
-├── routes/                       # Route definitions
-├── storage/                      # File storage
-└── tests/                       # Test files
+├── 📁 app/
+│   ├── 🎮 Console/Commands/     # Artisan commands
+│   ├── 📡 Events/              # Event classes
+│   ├── 📊 Exports/             # Excel export classes
+│   ├── 🛠️ Helpers/             # Helper functions
+│   ├── 🌐 Http/
+│   │   ├── 🎯 Controllers/     # Controller classes
+│   │   │   ├── 👨‍💼 Admin/     # Admin controllers
+│   │   │   ├── 🔐 Auth/        # Authentication
+│   │   │   └── 👨‍🎓 Santri/    # Student controllers
+│   │   └── 🛡️ Middleware/      # Custom middleware
+│   ├── 📋 Models/              # Eloquent models
+│   ├── 👀 Observers/           # Model observers
+│   ├── ⚙️ Providers/           # Service providers
+│   ├── 🔧 Services/            # Business logic services
+│   └── 🧬 Traits/              # Reusable traits
+├── ⚙️ config/                  # Configuration files
+├── 🗄️ database/
+│   ├── 🏭 factories/           # Model factories
+│   ├── 🚀 migrations/          # Database migrations
+│   └── 🌱 seeders/             # Database seeders
+├── 🌐 public/                  # Public assets
+├── 📦 resources/
+│   ├── 🎨 js/
+│   │   ├── 🧩 components/      # Vue components
+│   │   │   ├── 👨‍💼 admin/     # Admin components
+│   │   │   ├── 🔧 common/      # Shared components
+│   │   │   └── 👨‍🎓 santri/    # Student components
+│   │   ├── 🔌 services/        # API services
+│   │   └── 🛣️ router.js        # Vue router
+│   ├── 🎨 css/                 # Stylesheets
+│   └── 📄 views/               # Blade templates
+├── 🛣️ routes/                  # Route definitions
+├── 💾 storage/                 # File storage
+└── 🧪 tests/                   # Test files
 ```
 
-## 🚀 Instalasi
+---
 
-### Prerequisites
-- PHP 8.2 atau lebih tinggi
-- Composer
-- Node.js 18+ dan npm
-- MySQL 8.0+ atau PostgreSQL 13+
-- Web server (Apache/Nginx)
+## 🔧 Configuration
 
-### Langkah Instalasi
+### Environment Variables
 
-1. **Clone repository**
-```bash
-git clone <repository-url>
-cd ppsb
-```
+<details>
+<summary>📋 Database Configuration</summary>
 
-2. **Install PHP dependencies**
-```bash
-composer install
-```
-
-3. **Install Node.js dependencies**
-```bash
-npm install
-```
-
-4. **Setup environment**
-```bash
-cp .env.example .env
-php artisan key:generate
-```
-
-5. **Konfigurasi database di .env**
 ```env
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
@@ -169,76 +250,140 @@ DB_USERNAME=your_username
 DB_PASSWORD=your_password
 ```
 
-6. **Jalankan migration dan seeder**
-```bash
-php artisan migrate
-php artisan db:seed
-```
+</details>
 
-7. **Build assets**
-```bash
-npm run build
-```
+<details>
+<summary>📧 Mail Configuration</summary>
 
-8. **Setup storage link**
-```bash
-php artisan storage:link
-```
-
-9. **Jalankan server**
-```bash
-php artisan serve
-```
-
-## ⚙️ Konfigurasi
-
-### Environment Variables
-
-#### Database
-```env
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=ppsb_db
-DB_USERNAME=root
-DB_PASSWORD=
-```
-
-#### Mail Configuration
 ```env
 MAIL_MAILER=smtp
 MAIL_HOST=smtp.mailtrap.io
 MAIL_PORT=2525
-MAIL_USERNAME=null
-MAIL_PASSWORD=null
-MAIL_ENCRYPTION=null
-MAIL_FROM_ADDRESS="hello@example.com"
-MAIL_FROM_NAME="${APP_NAME}"
+MAIL_USERNAME=your_username
+MAIL_PASSWORD=your_password
+MAIL_ENCRYPTION=tls
+MAIL_FROM_ADDRESS="noreply@ppsb-almukmin.com"
+MAIL_FROM_NAME="PPSB AL-MUKMIN"
 ```
 
-#### Google OAuth
+</details>
+
+<details>
+<summary>🔐 Google OAuth</summary>
+
 ```env
 GOOGLE_CLIENT_ID=your_google_client_id
 GOOGLE_CLIENT_SECRET=your_google_client_secret
 GOOGLE_REDIRECT_URI=http://localhost:8000/auth/google/callback
 ```
 
-#### WhatsApp Configuration
+</details>
+
+<details>
+<summary>📱 WhatsApp Configuration</summary>
+
 ```env
 WHATSAPP_PROVIDER=fonnte
 FONNTE_TOKEN=your_fonnte_token
 FONNTE_DEVICE=your_device_id
 ```
 
+</details>
+
 ### File Permissions
+
 ```bash
+# Set proper permissions
 chmod -R 755 storage/
 chmod -R 755 bootstrap/cache/
+chown -R www-data:www-data storage/
+chown -R www-data:www-data bootstrap/cache/
 ```
 
-## 📖 Penggunaan
+---
 
-### Admin Panel
+## 📖 Documentation
+
+### API Endpoints
+
+<details>
+<summary>🔐 Authentication</summary>
+
+```bash
+# Login
+POST /api/auth/login
+{
+    "email": "admin@example.com",
+    "password": "password"
+}
+
+# Google OAuth
+GET /api/auth/google
+GET /api/auth/google/callback
+```
+
+</details>
+
+<details>
+<summary>👥 Student Management</summary>
+
+```bash
+# Get students data
+GET /api/admin/students
+
+# Create student
+POST /api/admin/students
+{
+    "name": "Ahmad Santri",
+    "nisn": "1234567890",
+    "gender": "male"
+}
+
+# Update student
+PUT /api/admin/students/{id}
+```
+
+</details>
+
+<details>
+<summary>💳 Payment Management</summary>
+
+```bash
+# Get payments
+GET /api/admin/payments
+
+# Verify payment
+POST /api/admin/payments/{id}/verify
+{
+    "status": "verified",
+    "notes": "Payment valid"
+}
+```
+
+</details>
+
+<details>
+<summary>📱 WhatsApp API</summary>
+
+```bash
+# Send message
+POST /api/whatsapp/send
+{
+    "to": "6281234567890",
+    "message": "Hello from PPSB",
+    "template": "registration_new"
+}
+
+# Test connection
+GET /api/whatsapp/test
+```
+
+</details>
+
+### Usage Guide
+
+<details>
+<summary>👨‍💼 Admin Panel</summary>
 
 1. **Login Admin**
    - Akses `/admin`
@@ -249,266 +394,117 @@ chmod -R 755 bootstrap/cache/
    - Monitor pembayaran
    - Notifikasi real-time
 
-3. **Manajemen Santri**
+3. **Student Management**
    - Tambah/edit data santri
    - Verifikasi dokumen
    - Export data
 
-4. **Manajemen Pembayaran**
+4. **Payment Management**
    - Verifikasi bukti pembayaran
    - Update status pembayaran
    - Generate invoice
 
-5. **Manajemen Gelombang**
+5. **Wave Management**
    - Buat periode pendaftaran
    - Set biaya administrasi
    - Aktifkan/nonaktifkan gelombang
 
-### Santri Portal
+</details>
 
-1. **Pendaftaran**
+<details>
+<summary>👨‍🎓 Student Portal</summary>
+
+1. **Registration**
    - Akses `/formulir`
    - Isi formulir 4 tahap
    - Upload dokumen
 
-2. **Cek Status**
+2. **Status Check**
    - Akses `/cek-pendaftaran`
    - Login dengan nomor pendaftaran
    - Lihat status dan alur
 
-3. **Dashboard Santri**
+3. **Dashboard**
    - Overview status pendaftaran
    - Upload bukti pembayaran
    - Lihat jadwal ujian
 
-### WhatsApp Integration
-
-1. **Setup Provider**
-   - Pilih provider WhatsApp
-   - Masukkan API credentials
-   - Test koneksi
-
-2. **Template Management**
-   - Buat template pesan
-   - Set variabel dinamis
-   - Aktifkan template
-
-3. **Auto Notification**
-   - Notifikasi pendaftaran baru
-   - Reminder pembayaran
-   - Update status ujian
-
-## 🔌 API Documentation
-
-### Authentication
-```bash
-# Login
-POST /login
-{
-    "email": "admin@example.com",
-    "password": "password"
-}
-
-# Google OAuth
-GET /auth/google
-GET /auth/google/callback
-```
-
-### Santri API
-```bash
-# Get santri data
-GET /api/admin/santri/data
-
-# Create santri
-POST /api/admin/santri
-{
-    "nama": "Ahmad Santri",
-    "nisn": "1234567890",
-    "jenis_kelamin": "Laki-laki",
-    // ... other fields
-}
-
-# Update santri
-PUT /api/admin/santri/{id}
-```
-
-### Pembayaran API
-```bash
-# Get pembayaran data
-GET /api/admin/pembayaran
-
-# Verifikasi pembayaran
-POST /api/admin/pembayaran/{id}/verifikasi
-{
-    "status": "diverifikasi",
-    "keterangan": "Pembayaran valid"
-}
-```
-
-### WhatsApp API
-```bash
-# Send message
-POST /api/whatsapp/send
-{
-    "to": "6281234567890",
-    "message": "Hello from PPSB",
-    "template": "pendaftaran_baru"
-}
-
-# Test connection
-GET /api/whatsapp/test
-```
-
-## 🚀 Deployment
-
-### Production Setup
-
-1. **Server Requirements**
-   - Ubuntu 20.04+ / CentOS 8+
-   - Nginx/Apache
-   - PHP 8.2+ dengan extensions
-   - MySQL 8.0+ / PostgreSQL 13+
-   - Redis (optional, untuk cache)
-
-2. **Deployment Steps**
-```bash
-# Clone repository
-git clone <repository-url>
-cd ppsb
-
-# Install dependencies
-composer install --optimize-autoloader --no-dev
-npm install
-npm run build
-
-# Setup environment
-cp .env.example .env
-# Edit .env dengan production settings
-
-# Setup database
-php artisan migrate --force
-php artisan db:seed --force
-
-# Setup permissions
-chown -R www-data:www-data storage/
-chown -R www-data:www-data bootstrap/cache/
-chmod -R 755 storage/
-chmod -R 755 bootstrap/cache/
-
-# Setup queue worker
-php artisan queue:work --daemon
-```
-
-3. **Nginx Configuration**
-```nginx
-server {
-    listen 80;
-    server_name your-domain.com;
-    root /var/www/ppsb/public;
-
-    add_header X-Frame-Options "SAMEORIGIN";
-    add_header X-Content-Type-Options "nosniff";
-
-    index index.php;
-
-    charset utf-8;
-
-    location / {
-        try_files $uri $uri/ /index.php?$query_string;
-    }
-
-    location = /favicon.ico { access_log off; log_not_found off; }
-    location = /robots.txt  { access_log off; log_not_found off; }
-
-    error_page 404 /index.php;
-
-    location ~ \.php$ {
-        fastcgi_pass unix:/var/run/php/php8.2-fpm.sock;
-        fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
-        include fastcgi_params;
-    }
-
-    location ~ /\.(?!well-known).* {
-        deny all;
-    }
-}
-```
-
-4. **SSL Certificate**
-```bash
-# Install Certbot
-sudo apt install certbot python3-certbot-nginx
-
-# Get SSL certificate
-sudo certbot --nginx -d your-domain.com
-```
-
-### Monitoring & Maintenance
-
-1. **Log Monitoring**
-```bash
-# View Laravel logs
-tail -f storage/logs/laravel.log
-
-# View queue logs
-tail -f storage/logs/queue.log
-```
-
-2. **Database Backup**
-```bash
-# Create backup
-mysqldump -u username -p ppsb_db > backup_$(date +%Y%m%d_%H%M%S).sql
-
-# Restore backup
-mysql -u username -p ppsb_db < backup_file.sql
-```
-
-3. **Cache Management**
-```bash
-# Clear all caches
-php artisan cache:clear
-php artisan config:clear
-php artisan route:clear
-php artisan view:clear
-
-# Optimize for production
-php artisan config:cache
-php artisan route:cache
-php artisan view:cache
-```
-
-## 🤝 Kontribusi
-
-1. Fork repository
-2. Buat feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push ke branch (`git push origin feature/AmazingFeature`)
-5. Buat Pull Request
-
-### Coding Standards
-- Ikuti PSR-12 untuk PHP
-- Gunakan ESLint untuk JavaScript
-- Tulis unit tests untuk fitur baru
-- Dokumentasikan API endpoints
-
-## 📄 Lisensi
-
-Project ini dilisensikan di bawah MIT License - lihat file [LICENSE](LICENSE) untuk detail.
-
-## 📞 Support
-
-Untuk pertanyaan dan dukungan:
-- Email: support@ppsb-almukmin.com
-- WhatsApp: +62 812-3456-7890
-- Documentation: [docs.ppsb-almukmin.com](https://docs.ppsb-almukmin.com)
-
-## 🙏 Acknowledgments
-
-- Laravel Team untuk framework yang luar biasa
-- Vue.js Team untuk reactive framework
-- Tailwind CSS untuk utility-first CSS
-- Semua contributor yang telah membantu pengembangan
+</details>
 
 ---
 
-**PPSB AL-MUKMIN** - Sistem Penerimaan Peserta Santri Baru yang Modern dan Terintegrasi 🏫✨
+## 🤝 Contributing
+
+We welcome contributions! Please follow these steps:
+
+1. 🍴 **Fork** the repository
+2. 🌿 **Create** a feature branch (`git checkout -b feature/AmazingFeature`)
+3. 💾 **Commit** your changes (`git commit -m 'Add some AmazingFeature'`)
+4. 📤 **Push** to the branch (`git push origin feature/AmazingFeature`)
+5. 🔄 **Open** a Pull Request
+
+### Development Guidelines
+
+- ✅ Follow PSR-12 for PHP code
+- ✅ Use ESLint for JavaScript
+- ✅ Write unit tests for new features
+- ✅ Document API endpoints
+- ✅ Keep commits atomic and meaningful
+
+### Code of Conduct
+
+Please read our [Code of Conduct](CODE_OF_CONDUCT.md) to keep our community approachable and respectable.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 📞 Support & Contact
+
+<div align="center">
+
+### 📧 Email
+[![Email](https://img.shields.io/badge/Email-support%40ppsb--almukmin.com-blue?style=for-the-badge&logo=gmail)](mailto:support@ppsb-almukmin.com)
+
+### 📱 WhatsApp
+[![WhatsApp](https://img.shields.io/badge/WhatsApp-+62%20812--3456--7890-green?style=for-the-badge&logo=whatsapp)](https://wa.me/6281234567890)
+
+### 📚 Documentation
+[![Documentation](https://img.shields.io/badge/Documentation-docs.ppsb--almukmin.com-orange?style=for-the-badge&logo=read-the-docs)](https://docs.ppsb-almukmin.com)
+
+### 🐛 Issues
+[![GitHub Issues](https://img.shields.io/badge/GitHub%20Issues-Report%20Bug-red?style=for-the-badge&logo=github)](https://github.com/aliifqh/ppsb/issues)
+
+</div>
+
+---
+
+## 🙏 Acknowledgments
+
+<div align="center">
+
+**Special thanks to:**
+
+- [Laravel Team](https://laravel.com) for the amazing framework
+- [Vue.js Team](https://vuejs.org) for the reactive framework
+- [Tailwind CSS](https://tailwindcss.com) for utility-first CSS
+- [Inertia.js](https://inertiajs.com) for SPA without API
+- All contributors who helped develop this project
+
+</div>
+
+---
+
+<div align="center">
+
+**Made with ❤️ for Pesantren AL-MUKMIN**
+
+[![GitHub](https://img.shields.io/badge/GitHub-aliifqh%2Fppsb-black?style=for-the-badge&logo=github)](https://github.com/aliifqh/ppsb)
+
+**PPSB AL-MUKMIN** - Modern & Integrated Student Registration System 🏫✨
+
+</div>
