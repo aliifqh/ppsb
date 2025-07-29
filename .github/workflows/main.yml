@@ -1,0 +1,40 @@
+name: 🚀 Deploy Laravel via LFTP
+
+on:
+  push:
+    branches:
+      - main  # Ganti sesuai branch utama kamu
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🧾 Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: ⚙️ Setup PHP & Node.js
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+      - run: |
+          composer install --no-dev --optimize-autoloader
+          npm install && npm run build
+          rm -rf .git .github node_modules tests README.md webpack.mix.js vite.config.* package*.json
+
+      - name: 🚀 FTP Deploy Action via lftp
+        uses: pontago/lftp-deploy-action@v1.0.1
+        with:
+          host: ${{ secrets.FTP_HOST }}               # e.g. ftp.domain.com
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: 21                                     # default FTP
+          protocol: ftps                               # gunakan 'sftp' kalau pakai SSH key
+          local_dir: ./                                # folder yang dikirim (root Laravel project)
+          remote_dir: /public_html/                    # path tujuan di server
+          create_remote_dir: true
+          verify_cert: false                           # set false kalau cert SSL bermasalah
+          dry_run: false
+          debug: true
+          timeout: 60
+          max_retries: 3
