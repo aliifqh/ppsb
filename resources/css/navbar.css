@@ -1,0 +1,223 @@
+/* Navbar Styles (Optimized for navbar.blade.php) */
+
+.nav-wrapper {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: transparent;
+    padding: 0;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.modern-nav {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 1280px;
+    margin: 10px auto;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+}
+.logo {
+    height: 60px;
+    width: auto;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.nav-container {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.nav-item {
+    flex: 1 1 0%;
+    min-width: 0;
+    max-width: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1rem 1.5rem;
+    color: #2A6061;
+    text-decoration: none;
+    border-radius: 8px;
+    background: rgba(112, 202, 203, 0.1);
+    border: 1px solid rgba(112, 202, 203, 0.2);
+    font-weight: 500;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.nav-item:hover {
+    background: rgba(112, 202, 203, 0.2);
+    color: #2A6061;
+    transform: translateY(-1px);
+    border-color: rgba(112, 202, 203, 0.3);
+}
+.nav-item.active {
+    background: #2A6061;
+    color: #fff;
+    border-color: #2A6061;
+    box-shadow: 0 4px 12px rgba(42, 96, 97, 0.2);
+}
+.nav-item.active .nav-icon {
+    filter: brightness(0) invert(1);
+}
+
+.nav-icon {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    filter: brightness(0) saturate(100%) invert(31%) sepia(15%) saturate(1234%) hue-rotate(118deg) brightness(94%) contrast(87%);
+}
+.nav-item:hover .nav-icon {
+    transform: scale(1.1);
+}
+
+.nav-item span {
+    font-size: 0.95rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 500;
+}
+
+/* Login hanya di desktop */
+@media (max-width: 916px) {
+    .login-desktop {
+        display: none !important;
+    }
+    .nav-container {
+        flex-direction: row !important;
+        gap: 0.5rem;
+        justify-content: flex-start;
+        width: 100%;
+    }
+    .nav-item {
+        margin-bottom: 0;
+        padding: 0.6rem 0.7rem;
+        font-size: 0.9rem;
+        flex: 1 1 0%;
+        min-width: 0;
+        max-width: none;
+    }
+    .nav-icon {
+        width: 16px;
+        height: 16px;
+    }
+    .logo-container {
+        height: 45px;
+    }
+    .logo {
+        height: 45px;
+    }
+}
+@media (min-width: 917px) {
+    .login-desktop {
+        display: flex !important;
+    }
+    .modern-nav {
+        flex-direction: row;
+        align-items: center;
+        gap: 30px;
+        padding: 1.25rem;
+        margin: 15px auto;
+    }
+    .logo-container {
+        flex-shrink: 0;
+        height: 50px;
+        margin-right: 20px;
+    }
+    .logo {
+        height: 50px;
+    }
+    .nav-container {
+        flex-direction: row;
+        justify-content: flex-end;
+        gap: 1.5rem;
+        width: 100%;
+    }
+    .nav-item {
+        flex: 0 1 auto;
+        min-width: 160px;
+        max-width: 200px;
+        margin-bottom: 0;
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+    }
+    .nav-icon {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* User Dropdown */
+.user-dropdown {
+    position: relative;
+}
+.user-btn {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font: inherit;
+    color: inherit;
+    gap: 0.5rem;
+    padding: 0;
+}
+.user-photo {
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 110%;
+    min-width: 160px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(42, 96, 97, 0.12);
+    padding: 0.5rem 0;
+    z-index: 10;
+}
+.user-dropdown[x-cloak] .dropdown-menu,
+.user-dropdown[x-show="userMenu"] .dropdown-menu {
+    display: block;
+}
+.dropdown-menu a,
+.dropdown-menu button {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    color: #2A6061;
+    background: none;
+    border: none;
+    text-align: left;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.dropdown-menu a:hover,
+.dropdown-menu button:hover {
+    background: #f0fdf4;
+}
+
+/* Hapus duplikasi dan class yang tidak dipakai */
+/* Sudah tidak ada .nav-link, .mobile-link, .mobile-menu, dsb */

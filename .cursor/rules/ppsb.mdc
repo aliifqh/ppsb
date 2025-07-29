@@ -1,0 +1,36 @@
+---
+description:
+globs:
+alwaysApply: true
+---
+# Cursor AI Rules for Laravel Project (Windows)
+
+## Instruksi Utama
+- **Bahasa**: Selalu gunakan Bahasa Indonesia.
+- **Fokus**: Langsung aplikasikan ke project Laravel (praktik, bukan teori).
+- **Error Handling**: Jika ada error, wajib cek `storage/logs/laravel.log` dan jelaskan solusi.
+- **Detail Perubahan**: Setiap perubahan harus dijelaskan secara rinci (file, logika, dampak).
+
+## Format Respons
+1. **Langkah Aksi**:
+   - Jelaskan langkah-langkah teknis (contoh: perintah artisan, edit file).
+   - Jika ada error, tampilkan pesan error dari `laravel.log` + solusi.
+
+2. **Penjelasan Pasca-Implementasi**:
+   - Daftar file yang dimodifikasi/dibuat.
+   - Ringkasan perubahan (contoh: "Menambah validasi di Controller").
+   - Screenshot/snippet kode jika diperlukan.
+
+3. **Verifikasi Akhir**:
+   - Wajib cek:
+     - `routes/web.php` atau `routes/api.php`.
+     - Controller dan Model terkait.
+     - View (jika ada perubahan UI).
+
+## Contoh Kasus
+### Permintaan: "Buat fitur CRUD untuk Post"
+**Langkah AI**:
+1. Buat Model + Migration:
+   ```bash
+
+   php artisan make:model Post -mcr

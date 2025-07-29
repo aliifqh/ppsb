@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pembayaran Santri - PPSB Wireframe</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .wireframe-container {
+            border: 2px solid #333;
+            margin: 20px auto;
+            max-width: 1000px;
+            min-height: 600px;
+            position: relative;
+            background-color: #f9f9f9;
+            display: flex;
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #01579b;
+            color: white;
+            padding: 20px 0;
+            height: 100%;
+        }
+        .sidebar-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .sidebar-menu li {
+            padding: 10px 20px;
+            border-left: 3px solid transparent;
+        }
+        .sidebar-menu li.active {
+            background-color: #0277bd;
+            border-left: 3px solid #4fc3f7;
+        }
+        .main-content {
+            flex: 1;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+            border-bottom: 1px solid #ddd;
+            background-color: white;
+        }
+        .header-right {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        .notification {
+            width: 30px;
+            height: 30px;
+            background-color: #f5f5f5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .notification::after {
+            content: "";
+            width: 8px;
+            height: 8px;
+            background-color: #f44336;
+            border-radius: 50%;
+            position: absolute;
+            top: 5px;
+            right: 5px;
+        }
+        .user-profile {
+            width: 30px;
+            height: 30px;
+            background-color: #e0e0e0;
+            border-radius: 50%;
+        }
+        .dashboard-content {
+            padding: 20px;
+        }
+        .payment-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        .payment-header {
+            padding: 15px;
+            background-color: #01579b;
+            color: white;
+            font-weight: bold;
+        }
+        .payment-body {
+            padding: 15px;
+        }
+        .payment-info {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        .payment-label {
+            width: 40%;
+            font-weight: 500;
+        }
+        .payment-value {
+            width: 60%;
+        }
+        .payment-status {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .status-paid {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+        .status-pending {
+            background-color: #fff3e0;
+            color: #e65100;
+        }
+        .status-unpaid {
+            background-color: #ffebee;
+            color: #c62828;
+        }
+        .payment-actions {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: #01579b;
+            color: white;
+            border-radius: 4px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        .btn.success {
+            background-color: #4caf50;
+        }
+        .btn.warning {
+            background-color: #ff9800;
+        }
+        .payment-history {
+            margin-top: 30px;
+        }
+        .history-title {
+            font-weight: 500;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #ddd;
+        }
+        .history-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .history-table th,
+        .history-table td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        .history-table th {
+            background-color: #f5f5f5;
+            font-weight: 500;
+        }
+        .back-btn {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 15px;
+            background-color: #01579b;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        h1 {
+            color: #01579b;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pembayaran Santri - PPSB Wireframe</h1>
+        <a href="index.html" class="back-btn">← Kembali ke Daftar Wireframe</a>
+        
+        <div class="wireframe-container">
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <ul class="sidebar-menu">
+                    <li>Dashboard</li>
+                    <li>Data Santri</li>
+                    <li class="active">Pembayaran</li>
+                    <li>Ujian</li>
+                    <li>Cetak</li>
+                </ul>
+            </div>
+            
+            <!-- Main Content -->
+            <div class="main-content">
+                <!-- Header -->
+                <div class="header">
+                    <div>PPSB Santri</div>
+                    <div class="header-right">
+                        <div class="notification"></div>
+                        <div class="user-profile"></div>
+                        <div>Logout</div>
+                    </div>
+                </div>
+                
+                <!-- Dashboard Content -->
+                <div class="dashboard-content">
+                    <h2>Pembayaran</h2>
+                    
+                    <!-- Biaya Pendaftaran -->
+                    <div class="payment-card">
+                        <div class="payment-header">
+                            Biaya Pendaftaran
+                        </div>
+                        <div class="payment-body">
+                            <div class="payment-info">
+                                <div class="payment-label">Nominal:</div>
+                                <div class="payment-value">Rp 500.000</div>
+                            </div>
+                            <div class="payment-info">
+                                <div class="payment-label">Status:</div>
+                                <div class="payment-value">
+                                    <span class="payment-status status-paid">Lunas</span>
+                                </div>
+                            </div>
+                            <div class="payment-info">
+                                <div class="payment-label">Tanggal Pembayaran:</div>
+                                <div class="payment-value">01 Januari 2024</div>
+                            </div>
+                            <div class="payment-info">
+                                <div class="payment-label">Metode Pembayaran:</div>
+                                <div class="payment-value">Transfer Bank</div>
+                            </div>
+                            
+                            <div class="payment-actions">
+                                <div class="btn">Lihat Bukti</div>
+                                <div class="btn">Cetak Kuitansi</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Biaya Daftar Ulang -->
+                    <div class="payment-card">
+                        <div class="payment-header">
+                            Biaya Daftar Ulang
+                        </div>
+                        <div class="payment-body">
+                            <div class="payment-info">
+                                <div class="payment-label">Nominal:</div>
+                                <div class="payment-value">Rp 2.500.000</div>
+                            </div>
+                            <div class="payment-info">
+                                <div class="payment-label">Status:</div>
+                                <div class="payment-value">
+                                    <span class="payment-status status-unpaid">Belum Bayar</span>
+                                </div>
+                            </div>
+                            <div class="payment-info">
+                                <div class="payment-label">Batas Waktu:</div>
+                                <div class="payment-value">30 Januari 2024</div>
+                            </div>
+                            
+                            <div class="payment-actions">
+                                <div class="btn success">Bayar Sekarang</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Riwayat Pembayaran -->
+                    <div class="payment-history">
+                        <div class="history-title">Riwayat Pembayaran</div>
+                        
+                        <table class="history-table">
+                            <thead>
+                                <tr>
+                                    <th>Tanggal</th>
+                                    <th>Deskripsi</th>
+                                    <th>Nominal</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>01/01/2024</td>
+                                    <td>Pembayaran Biaya Pendaftaran</td>
+                                    <td>Rp 500.000</td>
+                                    <td><span class="payment-status status-paid">Lunas</span></td>
+                                </tr>
+                                <tr>
+                                    <td>05/01/2024</td>
+                                    <td>Upload Bukti Pembayaran</td>
+                                    <td>-</td>
+                                    <td><span class="payment-status status-pending">Diproses</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <a href="index.html" class="back-btn">← Kembali ke Daftar Wireframe</a>
+    </div>
+</body>
+</html> 

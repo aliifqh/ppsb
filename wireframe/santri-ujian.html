@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ujian/Tes Masuk - PPSB Wireframe</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .wireframe-container {
+            border: 2px solid #333;
+            margin: 20px auto;
+            max-width: 1000px;
+            min-height: 600px;
+            position: relative;
+            background-color: #f9f9f9;
+            display: flex;
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #01579b;
+            color: white;
+            padding: 20px 0;
+            height: 100%;
+        }
+        .sidebar-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .sidebar-menu li {
+            padding: 10px 20px;
+            border-left: 3px solid transparent;
+        }
+        .sidebar-menu li.active {
+            background-color: #0277bd;
+            border-left: 3px solid #4fc3f7;
+        }
+        .main-content {
+            flex: 1;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+            border-bottom: 1px solid #ddd;
+            background-color: white;
+        }
+        .header-right {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        .notification {
+            width: 30px;
+            height: 30px;
+            background-color: #f5f5f5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .notification::after {
+            content: "";
+            width: 8px;
+            height: 8px;
+            background-color: #f44336;
+            border-radius: 50%;
+            position: absolute;
+            top: 5px;
+            right: 5px;
+        }
+        .user-profile {
+            width: 30px;
+            height: 30px;
+            background-color: #e0e0e0;
+            border-radius: 50%;
+        }
+        .dashboard-content {
+            padding: 20px;
+        }
+        .exam-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        .exam-header {
+            padding: 15px;
+            background-color: #01579b;
+            color: white;
+            font-weight: bold;
+        }
+        .exam-body {
+            padding: 15px;
+        }
+        .exam-info {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        .exam-label {
+            width: 30%;
+            font-weight: 500;
+            color: #555;
+        }
+        .exam-value {
+            width: 70%;
+        }
+        .exam-status {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .status-upcoming {
+            background-color: #e3f2fd;
+            color: #0277bd;
+        }
+        .status-ongoing {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+        .status-completed {
+            background-color: #e0f2f1;
+            color: #00796b;
+        }
+        .status-missed {
+            background-color: #ffebee;
+            color: #c62828;
+        }
+        .countdown {
+            background-color: #e3f2fd;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            text-align: center;
+        }
+        .countdown-title {
+            font-weight: 500;
+            margin-bottom: 10px;
+            color: #0277bd;
+        }
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .timer-unit {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .timer-value {
+            width: 40px;
+            height: 40px;
+            background-color: #0277bd;
+            color: white;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .timer-label {
+            font-size: 12px;
+            margin-top: 5px;
+            color: #555;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #01579b;
+            color: white;
+            border-radius: 4px;
+            font-weight: 500;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        .btn.disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+        .result-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        .result-table th,
+        .result-table td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        .result-table th {
+            background-color: #f5f5f5;
+            font-weight: 500;
+        }
+        .score {
+            font-weight: bold;
+        }
+        .score.high {
+            color: #2e7d32;
+        }
+        .score.medium {
+            color: #ff9800;
+        }
+        .score.low {
+            color: #c62828;
+        }
+        .result-summary {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+        .summary-title {
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        .summary-result {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2e7d32;
+        }
+        .back-btn {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 15px;
+            background-color: #01579b;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        h1 {
+            color: #01579b;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ujian/Tes Masuk - PPSB Wireframe</h1>
+        <a href="index.html" class="back-btn">← Kembali ke Daftar Wireframe</a>
+        
+        <div class="wireframe-container">
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <ul class="sidebar-menu">
+                    <li>Dashboard</li>
+                    <li>Data Santri</li>
+                    <li>Pembayaran</li>
+                    <li class="active">Ujian</li>
+                    <li>Cetak</li>
+                </ul>
+            </div>
+            
+            <!-- Main Content -->
+            <div class="main-content">
+                <!-- Header -->
+                <div class="header">
+                    <div>PPSB Santri</div>
+                    <div class="header-right">
+                        <div class="notification"></div>
+                        <div class="user-profile"></div>
+                        <div>Logout</div>
+                    </div>
+                </div>
+                
+                <!-- Dashboard Content -->
+                <div class="dashboard-content">
+                    <h2>Ujian/Tes Masuk</h2>
+                    
+                    <!-- Ujian Tertulis -->
+                    <div class="exam-card">
+                        <div class="exam-header">
+                            Ujian Tertulis
+                        </div>
+                        <div class="exam-body">
+                            <div class="exam-info">
+                                <div class="exam-label">Status:</div>
+                                <div class="exam-value">
+                                    <span class="exam-status status-upcoming">Akan Datang</span>
+                                </div>
+                            </div>
+                            <div class="exam-info">
+                                <div class="exam-label">Tanggal:</div>
+                                <div class="exam-value">20 Januari 2024</div>
+                            </div>
+                            <div class="exam-info">
+                                <div class="exam-label">Waktu:</div>
+                                <div class="exam-value">08:00 - 10:00 WIB</div>
+                            </div>
+                            <div class="exam-info">
+                                <div class="exam-label">Tempat:</div>
+                                <div class="exam-value">Ruang Ujian 1, Gedung Utama</div>
+                            </div>
+                            <div class="exam-info">
+                                <div class="exam-label">Mata Ujian:</div>
+                                <div class="exam-value">Matematika, Bahasa Indonesia, IPA, PAI</div>
+                            </div>
+                            
+                            <div class="countdown">
+                                <div class="countdown-title">Ujian akan dimulai dalam:</div>
+                                <div class="countdown-timer">
+                                    <div class="timer-unit">
+                                        <div class="timer-value">05</div>
+                                        <div class="timer-label">Hari</div>
+                                    </div>
+                                    <div class="timer-unit">
+                                        <div class="timer-value">12</div>
+                                        <div class="timer-label">Jam</div>
+                                    </div>
+                                    <div class="timer-unit">
+                                        <div class="timer-value">45</div>
+                                        <div class="timer-label">Menit</div>
+                                    </div>
+                                    <div class="timer-unit">
+                                        <div class="timer-value">30</div>
+                                        <div class="timer-label">Detik</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="btn disabled">Mulai Ujian</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Ujian Baca Al-Quran -->
+                    <div class="exam-card">
+                        <div class="exam-header">
+                            Ujian Baca Al-Quran
+                        </div>
+                        <div class="exam-body">
+                            <div class="exam-info">
+                                <div class="exam-label">Status:</div>
+                                <div class="exam-value">
+                                    <span class="exam-status status-completed">Selesai</span>
+                                </div>
+                            </div>
+                            <div class="exam-info">
+                                <div class="exam-label">Tanggal:</div>
+                                <div class="exam-value">15 Januari 2024</div>
+                            </div>
+                            <div class="exam-info">
+                                <div class="exam-label">Waktu:</div>
+                                <div class="exam-value">13:00 - 15:00 WIB</div>
+                            </div>
+                            <div class="exam-info">
+                                <div class="exam-label">Tempat:</div>
+                                <div class="exam-value">Ruang Tahfidz, Gedung Masjid</div>
+                            </div>
+                            
+                            <div class="result-table">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Aspek Penilaian</th>
+                                            <th>Nilai</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Tajwid</td>
+                                            <td><span class="score high">85</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Makharijul Huruf</td>
+                                            <td><span class="score medium">75</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Kelancaran</td>
+                                            <td><span class="score high">90</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Hafalan</td>
+                                            <td><span class="score high">80</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <div class="result-summary">
+                                <div class="summary-title">Hasil Akhir:</div>
+                                <div class="summary-result">LULUS</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Wawancara -->
+                    <div class="exam-card">
+                        <div class="exam-header">
+                            Wawancara
+                        </div>
+                        <div class="exam-body">
+                            <div class="exam-info">
+                                <div class="exam-label">Status:</div>
+                                <div class="exam-value">
+                                    <span class="exam-status status-ongoing">Sedang Berlangsung</span>
+                                </div>
+                            </div>
+                            <div class="exam-info">
+                                <div class="exam-label">Tanggal:</div>
+                                <div class="exam-value">Hari ini, 15 Januari 2024</div>
+                            </div>
+                            <div class="exam-info">
+                                <div class="exam-label">Waktu:</div>
+                                <div class="exam-value">10:00 - 12:00 WIB</div>
+                            </div>
+                            <div class="exam-info">
+                                <div class="exam-label">Tempat:</div>
+                                <div class="exam-value">Ruang Wawancara 3, Gedung Administrasi</div>
+                            </div>
+                            <div class="exam-info">
+                                <div class="exam-label">Pewawancara:</div>
+                                <div class="exam-value">Ustadz Ahmad Fauzi</div>
+                            </div>
+                            
+                            <div class="btn">Lihat Detail</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <a href="index.html" class="back-btn">← Kembali ke Daftar Wireframe</a>
+    </div>
+</body>
+</html> 

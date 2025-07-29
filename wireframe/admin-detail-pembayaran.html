@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Pembayaran - PPSB Wireframe</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .wireframe-container {
+            border: 2px solid #333;
+            margin: 20px auto;
+            max-width: 1000px;
+            min-height: 600px;
+            position: relative;
+            background-color: #f9f9f9;
+            display: flex;
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #263238;
+            color: white;
+            padding: 20px 0;
+            height: 100%;
+        }
+        .sidebar-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .sidebar-menu li {
+            padding: 10px 20px;
+            border-left: 3px solid transparent;
+        }
+        .sidebar-menu li.active {
+            background-color: #37474f;
+            border-left: 3px solid #4caf50;
+        }
+        .main-content {
+            flex: 1;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+            border-bottom: 1px solid #ddd;
+            background-color: white;
+        }
+        .header-right {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        .notification {
+            width: 30px;
+            height: 30px;
+            background-color: #f5f5f5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .notification::after {
+            content: "";
+            width: 8px;
+            height: 8px;
+            background-color: #f44336;
+            border-radius: 50%;
+            position: absolute;
+            top: 5px;
+            right: 5px;
+        }
+        .user-profile {
+            width: 30px;
+            height: 30px;
+            background-color: #e0e0e0;
+            border-radius: 50%;
+        }
+        .content {
+            padding: 20px;
+        }
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .page-title {
+            font-size: 24px;
+            font-weight: 500;
+        }
+        .btn-group {
+            display: flex;
+            gap: 10px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: #4caf50;
+            color: white;
+            border-radius: 4px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        .btn.secondary {
+            background-color: #2196f3;
+        }
+        .btn.danger {
+            background-color: #f44336;
+        }
+        .btn.warning {
+            background-color: #ff9800;
+        }
+        .data-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        .data-header {
+            padding: 15px;
+            background-color: #4caf50;
+            color: white;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .data-body {
+            padding: 15px;
+        }
+        .data-section {
+            margin-bottom: 20px;
+        }
+        .section-title {
+            font-weight: 500;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #eee;
+            color: #4caf50;
+        }
+        .data-row {
+            display: flex;
+            margin-bottom: 10px;
+            padding: 5px 0;
+        }
+        .data-label {
+            width: 30%;
+            font-weight: 500;
+            color: #555;
+        }
+        .data-value {
+            width: 70%;
+        }
+        .status-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        .status-verified {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+        .status-pending {
+            background-color: #fff3e0;
+            color: #e65100;
+        }
+        .status-rejected {
+            background-color: #ffebee;
+            color: #c62828;
+        }
+        .payment-proof {
+            width: 100%;
+            max-width: 400px;
+            height: 300px;
+            background-color: #e0e0e0;
+            border: 1px solid #ccc;
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+        }
+        .verification-form {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        .form-control {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: white;
+            box-sizing: border-box;
+        }
+        .form-textarea {
+            height: 100px;
+            resize: vertical;
+        }
+        .radio-group {
+            display: flex;
+            gap: 15px;
+        }
+        .radio-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .history-item {
+            display: flex;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .history-date {
+            width: 150px;
+            color: #777;
+            font-size: 14px;
+        }
+        .history-action {
+            flex: 1;
+        }
+        .history-user {
+            width: 150px;
+            text-align: right;
+            font-weight: 500;
+            color: #555;
+        }
+        .back-btn {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 15px;
+            background-color: #009688;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        h1 {
+            color: #009688;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Detail Pembayaran - PPSB Wireframe</h1>
+        <a href="index.html" class="back-btn">← Kembali ke Daftar Wireframe</a>
+        
+        <div class="wireframe-container">
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <ul class="sidebar-menu">
+                    <li>Dashboard</li>
+                    <li>Santri</li>
+                    <li class="active">Pembayaran</li>
+                    <li>Gelombang</li>
+                    <li>WhatsApp</li>
+                    <li>Roles</li>
+                </ul>
+            </div>
+            
+            <!-- Main Content -->
+            <div class="main-content">
+                <!-- Header -->
+                <div class="header">
+                    <div>PPSB Admin</div>
+                    <div class="header-right">
+                        <div class="notification"></div>
+                        <div class="user-profile"></div>
+                        <div>Admin</div>
+                    </div>
+                </div>
+                
+                <!-- Content -->
+                <div class="content">
+                    <div class="page-header">
+                        <div class="page-title">Detail Pembayaran</div>
+                        <div class="btn-group">
+                            <div class="btn secondary">Cetak Kuitansi</div>
+                            <div class="btn warning">Kembali</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Informasi Pembayaran -->
+                    <div class="data-card">
+                        <div class="data-header">
+                            <div>Informasi Pembayaran</div>
+                        </div>
+                        <div class="data-body">
+                            <div class="data-row">
+                                <div class="data-label">ID Pembayaran:</div>
+                                <div class="data-value">PAY-2024-00123</div>
+                            </div>
+                            <div class="data-row">
+                                <div class="data-label">Status:</div>
+                                <div class="data-value">
+                                    <span class="status-badge status-pending">Menunggu Verifikasi</span>
+                                </div>
+                            </div>
+                            <div class="data-row">
+                                <div class="data-label">Jenis Pembayaran:</div>
+                                <div class="data-value">Biaya Pendaftaran</div>
+                            </div>
+                            <div class="data-row">
+                                <div class="data-label">Nominal:</div>
+                                <div class="data-value">Rp 500.000</div>
+                            </div>
+                            <div class="data-row">
+                                <div class="data-label">Tanggal Upload:</div>
+                                <div class="data-value">02 Januari 2024, 14:30 WIB</div>
+                            </div>
+                            <div class="data-row">
+                                <div class="data-label">Metode Pembayaran:</div>
+                                <div class="data-value">Transfer Bank</div>
+                            </div>
+                            <div class="data-row">
+                                <div class="data-label">Bank Tujuan:</div>
+                                <div class="data-value">Bank BRI - 1234-5678-9012-3456 (Yayasan Pesantren ABC)</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Informasi Santri -->
+                    <div class="data-card">
+                        <div class="data-header">
+                            <div>Informasi Santri</div>
+                        </div>
+                        <div class="data-body">
+                            <div class="data-row">
+                                <div class="data-label">No. Pendaftaran:</div>
+                                <div class="data-value">PPSB-2024-00124</div>
+                            </div>
+                            <div class="data-row">
+                                <div class="data-label">Nama Santri:</div>
+                                <div class="data-value">Anisa Rahmawati</div>
+                            </div>
+                            <div class="data-row">
+                                <div class="data-label">Unit:</div>
+                                <div class="data-value">SMP</div>
+                            </div>
+                            <div class="data-row">
+                                <div class="data-label">Gelombang:</div>
+                                <div class="data-value">Gelombang 1</div>
+                            </div>
+                            <div class="data-row">
+                                <div class="data-label">No. HP:</div>
+                                <div class="data-value">08123456789</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Bukti Pembayaran -->
+                    <div class="data-card">
+                        <div class="data-header">
+                            <div>Bukti Pembayaran</div>
+                        </div>
+                        <div class="data-body">
+                            <div class="payment-proof">
+                                [Gambar Bukti Transfer]
+                            </div>
+                            <div class="data-row">
+                                <div class="data-label">Keterangan:</div>
+                                <div class="data-value">Pembayaran biaya pendaftaran atas nama Anisa Rahmawati</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Form Verifikasi -->
+                    <div class="data-card">
+                        <div class="data-header">
+                            <div>Verifikasi Pembayaran</div>
+                        </div>
+                        <div class="data-body">
+                            <div class="verification-form">
+                                <div class="form-group">
+                                    <div class="form-label">Status Verifikasi</div>
+                                    <div class="radio-group">
+                                        <div class="radio-item">
+                                            <input type="radio" id="status-verified" name="status" checked>
+                                            <label for="status-verified">Terverifikasi</label>
+                                        </div>
+                                        <div class="radio-item">
+                                            <input type="radio" id="status-rejected" name="status">
+                                            <label for="status-rejected">Ditolak</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <div class="form-label">Catatan Verifikasi</div>
+                                    <textarea class="form-control form-textarea"></textarea>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <div class="form-label">Kirim Notifikasi WhatsApp</div>
+                                    <div class="radio-group">
+                                        <div class="radio-item">
+                                            <input type="checkbox" id="send-wa" checked>
+                                            <label for="send-wa">Ya, kirim notifikasi ke santri</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="btn-group">
+                                    <div class="btn">Simpan & Verifikasi</div>
+                                    <div class="btn danger">Tolak Pembayaran</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Riwayat Aktivitas -->
+                    <div class="data-card">
+                        <div class="data-header">
+                            <div>Riwayat Aktivitas</div>
+                        </div>
+                        <div class="data-body">
+                            <div class="history-item">
+                                <div class="history-date">02/01/2024 14:30</div>
+                                <div class="history-action">Upload bukti pembayaran</div>
+                                <div class="history-user">Anisa Rahmawati</div>
+                            </div>
+                            <div class="history-item">
+                                <div class="history-date">02/01/2024 14:30</div>
+                                <div class="history-action">Pembayaran masuk ke sistem</div>
+                                <div class="history-user">Sistem</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <a href="index.html" class="back-btn">← Kembali ke Daftar Wireframe</a>
+    </div>
+</body>
+</html> 

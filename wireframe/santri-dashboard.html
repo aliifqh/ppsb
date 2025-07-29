@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Santri - PPSB Wireframe</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .wireframe-container {
+            border: 2px solid #333;
+            margin: 20px auto;
+            max-width: 1000px;
+            min-height: 600px;
+            position: relative;
+            background-color: #f9f9f9;
+            display: flex;
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #01579b;
+            color: white;
+            padding: 20px 0;
+            height: 100%;
+        }
+        .sidebar-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .sidebar-menu li {
+            padding: 10px 20px;
+            border-left: 3px solid transparent;
+        }
+        .sidebar-menu li.active {
+            background-color: #0277bd;
+            border-left: 3px solid #4fc3f7;
+        }
+        .main-content {
+            flex: 1;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+            border-bottom: 1px solid #ddd;
+            background-color: white;
+        }
+        .header-right {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        .notification {
+            width: 30px;
+            height: 30px;
+            background-color: #f5f5f5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .notification::after {
+            content: "";
+            width: 8px;
+            height: 8px;
+            background-color: #f44336;
+            border-radius: 50%;
+            position: absolute;
+            top: 5px;
+            right: 5px;
+        }
+        .user-profile {
+            width: 30px;
+            height: 30px;
+            background-color: #e0e0e0;
+            border-radius: 50%;
+        }
+        .dashboard-content {
+            padding: 20px;
+        }
+        .info-card {
+            background-color: white;
+            border-radius: 5px;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .info-title {
+            font-weight: 500;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #eee;
+            color: #01579b;
+        }
+        .info-detail {
+            display: flex;
+            margin-bottom: 5px;
+        }
+        .info-label {
+            width: 40%;
+            font-weight: 500;
+        }
+        .info-value {
+            width: 60%;
+        }
+        .progress-container {
+            margin-top: 20px;
+        }
+        .progress-title {
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        .progress-bar {
+            height: 20px;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background-color: #4fc3f7;
+            width: 50%;
+        }
+        .steps-container {
+            margin-top: 20px;
+        }
+        .steps {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        .step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 80px;
+        }
+        .step-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #e0e0e0;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        .step-icon.complete {
+            background-color: #a5d6a7;
+            color: #2e7d32;
+        }
+        .step-icon.current {
+            background-color: #90caf9;
+            color: #1565c0;
+        }
+        .announcement-container {
+            margin-top: 20px;
+        }
+        .announcement-item {
+            padding: 10px;
+            background-color: #e1f5fe;
+            border-left: 3px solid #4fc3f7;
+            margin-bottom: 10px;
+            border-radius: 3px;
+        }
+        .back-btn {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 15px;
+            background-color: #01579b;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        h1 {
+            color: #01579b;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Dashboard Santri - PPSB Wireframe</h1>
+        <a href="index.html" class="back-btn">← Kembali ke Daftar Wireframe</a>
+        
+        <div class="wireframe-container">
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <ul class="sidebar-menu">
+                    <li class="active">Dashboard</li>
+                    <li>Data Santri</li>
+                    <li>Pembayaran</li>
+                    <li>Ujian</li>
+                    <li>Cetak</li>
+                </ul>
+            </div>
+            
+            <!-- Main Content -->
+            <div class="main-content">
+                <!-- Header -->
+                <div class="header">
+                    <div>PPSB Santri</div>
+                    <div class="header-right">
+                        <div class="notification"></div>
+                        <div class="user-profile"></div>
+                        <div>Logout</div>
+                    </div>
+                </div>
+                
+                <!-- Dashboard Content -->
+                <div class="dashboard-content">
+                    <h2>Dashboard</h2>
+                    
+                    <!-- Informasi Santri -->
+                    <div class="info-card">
+                        <div class="info-title">INFORMASI SANTRI</div>
+                        <div class="info-detail">
+                            <div class="info-label">Nomor Pendaftaran</div>
+                            <div class="info-value">PPSB-2024-00123</div>
+                        </div>
+                        <div class="info-detail">
+                            <div class="info-label">Nama Lengkap</div>
+                            <div class="info-value">Muhammad Budi Santoso</div>
+                        </div>
+                        <div class="info-detail">
+                            <div class="info-label">Unit</div>
+                            <div class="info-value">SMP</div>
+                        </div>
+                        <div class="info-detail">
+                            <div class="info-label">Gelombang</div>
+                            <div class="info-value">Gelombang 1</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Status Pendaftaran -->
+                    <div class="info-card">
+                        <div class="info-title">STATUS PENDAFTARAN</div>
+                        <div class="progress-container">
+                            <div class="progress-title">Progress Pendaftaran</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="steps-container">
+                            <div class="info-title">ALUR PENDAFTARAN</div>
+                            <div class="steps">
+                                <div class="step">
+                                    <div class="step-icon complete">✓</div>
+                                    <div>Pendaftaran</div>
+                                </div>
+                                <div class="step">
+                                    <div class="step-icon current">2</div>
+                                    <div>Pembayaran</div>
+                                </div>
+                                <div class="step">
+                                    <div class="step-icon">3</div>
+                                    <div>Ujian</div>
+                                </div>
+                                <div class="step">
+                                    <div class="step-icon">4</div>
+                                    <div>Pengumuman</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pengumuman -->
+                    <div class="info-card">
+                        <div class="info-title">PENGUMUMAN</div>
+                        <div class="announcement-container">
+                            <div class="announcement-item">
+                                <div><strong>Ujian Seleksi</strong></div>
+                                <div>Ujian seleksi akan dilaksanakan pada tanggal 15 Februari 2024. Harap mempersiapkan diri dan membawa perlengkapan yang dibutuhkan.</div>
+                            </div>
+                            <div class="announcement-item">
+                                <div><strong>Pembayaran Daftar Ulang</strong></div>
+                                <div>Bagi yang sudah dinyatakan lulus, segera melakukan pembayaran daftar ulang paling lambat 7 hari setelah pengumuman.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <a href="index.html" class="back-btn">← Kembali ke Daftar Wireframe</a>
+    </div>
+</body>
+</html> 

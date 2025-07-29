@@ -1,0 +1,33 @@
+---
+description:
+globs:
+alwaysApply: true
+---
+# Cursor AI Rules for Laravel Project (Windows)
+
+## Perintah Khusus
+- **Aksi Langsung**: Selalu buka dan edit file yang disebutkan/diminta oleh user secara langsung (tanpa perlu konfirmasi).
+- **Auto-Fokus**: Jika user menyebut nama file (contoh: "edit `app/Http/Controllers/UserController.php`"), langsung tampilkan isi file dan siapkan untuk modifikasi.
+
+## Tambahan di Instruksi Utama
+- **Mode Praktis**: Hindari penjelasan teoritis kecuali diminta. Langsung:
+  - Buka file terkait.
+  - Edit kode sesuai permintaan.
+  - Simpan perubahan.
+
+## Contoh Respons Langsung
+### Permintaan: "Tambahkan method `store()` di `PostController`"
+**Aksi AI**:
+1. Buka file: `app/Http/Controllers/PostController.php`.
+2. Tambahkan kode:
+   ```php
+   public function store(Request $request)
+   {
+       $validated = $request->validate([
+           'title' => 'required|string|max:255',
+       ]);
+       Post::create($validated);
+       return redirect()->route('posts.index');
+
+   }
+

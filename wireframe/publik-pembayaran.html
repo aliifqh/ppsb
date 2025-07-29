@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pembayaran - PPSB Wireframe</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .wireframe-container {
+            border: 2px solid #333;
+            margin: 20px auto;
+            max-width: 800px;
+            min-height: 600px;
+            position: relative;
+            background-color: #f9f9f9;
+        }
+        .wireframe-section {
+            border: 1px solid #777;
+            padding: 15px;
+            margin-bottom: 10px;
+            background-color: #fff;
+            text-align: center;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+            border-bottom: 1px solid #777;
+            background-color: #f0f0f0;
+        }
+        .logo {
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .menu {
+            display: flex;
+            gap: 15px;
+        }
+        .menu-item {
+            border: 1px solid #aaa;
+            padding: 5px 10px;
+            border-radius: 3px;
+            background-color: #eee;
+        }
+        .payment-title {
+            text-align: center;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #00796b;
+        }
+        .payment-box {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 0 20px 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .info-section {
+            margin-bottom: 20px;
+        }
+        .info-title {
+            font-weight: bold;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #eee;
+            color: #00796b;
+        }
+        .info-row {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        .info-label {
+            width: 40%;
+            font-weight: 500;
+        }
+        .info-value {
+            width: 60%;
+        }
+        .bank-info {
+            background-color: #e8f5e9;
+            border: 1px solid #c8e6c9;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .bank-row {
+            margin-bottom: 10px;
+        }
+        .bank-name {
+            font-weight: bold;
+        }
+        .upload-section {
+            margin-top: 30px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        .form-control {
+            width: 100%;
+            height: 40px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px 10px;
+            background-color: #f5f5f5;
+            box-sizing: border-box;
+        }
+        .form-control.textarea {
+            height: 100px;
+        }
+        .btn {
+            display: inline-block;
+            width: 100%;
+            padding: 12px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .notice {
+            background-color: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 15px;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+        .back-btn {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 15px;
+            background-color: #009688;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        h1 {
+            color: #009688;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pembayaran - PPSB Wireframe</h1>
+        <a href="index.html" class="back-btn">← Kembali ke Daftar Wireframe</a>
+        
+        <div class="wireframe-container">
+            <!-- Header/Navbar -->
+            <div class="header">
+                <div class="logo">Logo PPSB</div>
+                <div class="menu">
+                    <div class="menu-item">Beranda</div>
+                    <div class="menu-item">Tentang</div>
+                    <div class="menu-item">Panduan</div>
+                    <div class="menu-item">Login</div>
+                </div>
+            </div>
+            
+            <!-- Judul Pembayaran -->
+            <div class="payment-title">Pembayaran Biaya Pendaftaran</div>
+            
+            <!-- Informasi Pembayaran -->
+            <div class="payment-box">
+                <div class="info-section">
+                    <div class="info-title">INFORMASI SANTRI</div>
+                    <div class="info-row">
+                        <div class="info-label">Nomor Pendaftaran:</div>
+                        <div class="info-value">PPSB-2024-00123</div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-label">Nama:</div>
+                        <div class="info-value">Muhammad Budi Santoso</div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-label">Unit:</div>
+                        <div class="info-value">SMP</div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-label">Biaya Pendaftaran:</div>
+                        <div class="info-value">Rp 500.000</div>
+                    </div>
+                </div>
+                
+                <div class="bank-info">
+                    <div class="info-title">REKENING PEMBAYARAN</div>
+                    <div class="bank-row">
+                        <div class="bank-name">Bank BRI</div>
+                        <div>No. Rekening: 1234-5678-9012-3456</div>
+                        <div>Atas Nama: Yayasan Pesantren ABC</div>
+                    </div>
+                </div>
+                
+                <div class="upload-section">
+                    <div class="info-title">UPLOAD BUKTI PEMBAYARAN</div>
+                    
+                    <div class="form-group">
+                        <div class="form-label">Bukti Transfer (JPG/PNG)</div>
+                        <div class="form-control">[ File Upload ]</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="form-label">Keterangan (Opsional)</div>
+                        <div class="form-control textarea"></div>
+                    </div>
+                    
+                    <div class="notice">
+                        <strong>Catatan:</strong> Pastikan bukti pembayaran menampilkan tanggal, nominal, dan nama penerima dengan jelas.
+                    </div>
+                    
+                    <div class="btn">Kirim Bukti Pembayaran</div>
+                </div>
+            </div>
+        </div>
+        
+        <a href="index.html" class="back-btn">← Kembali ke Daftar Wireframe</a>
+    </div>
+</body>
+</html> 

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage - PPSB Wireframe</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .wireframe-container {
+            border: 2px solid #333;
+            margin: 20px auto;
+            max-width: 800px;
+            min-height: 600px;
+            position: relative;
+            background-color: #f9f9f9;
+        }
+        .wireframe-section {
+            border: 1px solid #777;
+            padding: 15px;
+            margin-bottom: 10px;
+            background-color: #fff;
+            text-align: center;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+            border-bottom: 1px solid #777;
+            background-color: #f0f0f0;
+        }
+        .logo {
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .menu {
+            display: flex;
+            gap: 15px;
+        }
+        .menu-item {
+            border: 1px solid #aaa;
+            padding: 5px 10px;
+            border-radius: 3px;
+            background-color: #eee;
+        }
+        .hero {
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #e0f7fa;
+        }
+        .btn {
+            display: inline-block;
+            padding: 8px 15px;
+            margin-top: 15px;
+            background-color: #4caf50;
+            color: white;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .info-section {
+            padding: 20px;
+        }
+        .info-cards {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 15px;
+        }
+        .card {
+            border: 1px solid #aaa;
+            width: 30%;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #f5f5f5;
+        }
+        .steps {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 20px 0;
+        }
+        .step {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #b2dfdb;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .step::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: -30px;
+            width: 30px;
+            height: 2px;
+            background-color: #aaa;
+        }
+        .step:last-child::after {
+            display: none;
+        }
+        .footer {
+            padding: 20px;
+            text-align: center;
+            border-top: 1px solid #777;
+            background-color: #f0f0f0;
+        }
+        .back-btn {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 15px;
+            background-color: #009688;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        h1 {
+            color: #009688;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Homepage - PPSB Wireframe</h1>
+        <a href="index.html" class="back-btn">← Kembali ke Daftar Wireframe</a>
+        
+        <div class="wireframe-container">
+            <!-- Header/Navbar -->
+            <div class="header">
+                <div class="logo">Logo PPSB</div>
+                <div class="menu">
+                    <div class="menu-item">Beranda</div>
+                    <div class="menu-item">Tentang</div>
+                    <div class="menu-item">Panduan</div>
+                    <div class="menu-item">Login</div>
+                </div>
+            </div>
+            
+            <!-- Hero Banner -->
+            <div class="wireframe-section hero">
+                <h2>Pendaftaran Santri Baru 2024</h2>
+                <div class="btn">Daftar Sekarang</div>
+            </div>
+            
+            <!-- Info Gelombang -->
+            <div class="wireframe-section">
+                <h3>INFO GELOMBANG</h3>
+                <div>Gelombang 1: 1 Jan - 31 Jan</div>
+                <div>Gelombang 2: 1 Feb - 28 Feb</div>
+            </div>
+            
+            <!-- Alur Pendaftaran -->
+            <div class="wireframe-section">
+                <h3>ALUR PENDAFTARAN</h3>
+                <div class="steps">
+                    <div class="step">1</div>
+                    <div class="step">2</div>
+                    <div class="step">3</div>
+                    <div class="step">4</div>
+                </div>
+                <div class="steps">
+                    <div>Daftar</div>
+                    <div>Bayar</div>
+                    <div>Tes</div>
+                    <div>Hasil</div>
+                </div>
+            </div>
+            
+            <!-- Biaya & Ketentuan -->
+            <div class="wireframe-section">
+                <h3>BIAYA & KETENTUAN</h3>
+                <div>Biaya Pendaftaran: Rp XXX.XXX</div>
+                <div>Biaya Daftar Ulang: Rp XXX.XXX</div>
+            </div>
+            
+            <!-- Fasilitas -->
+            <div class="wireframe-section">
+                <h3>FASILITAS</h3>
+                <div class="info-cards">
+                    <div class="card">Asrama</div>
+                    <div class="card">Perpustakaan</div>
+                    <div class="card">Laboratorium</div>
+                </div>
+            </div>
+            
+            <!-- Kontak -->
+            <div class="wireframe-section">
+                <h3>KONTAK</h3>
+                <div>Hubungi Kami</div>
+                <div>WhatsApp - Email - Alamat</div>
+            </div>
+            
+            <!-- Footer -->
+            <div class="footer">
+                <div>Copyright © 2024 PPSB</div>
+                <div>Social Media - Links</div>
+            </div>
+        </div>
+        
+        <a href="index.html" class="back-btn">← Kembali ke Daftar Wireframe</a>
+    </div>
+</body>
+</html> 

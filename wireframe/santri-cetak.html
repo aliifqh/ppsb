@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cetak Dokumen - PPSB Wireframe</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .wireframe-container {
+            border: 2px solid #333;
+            margin: 20px auto;
+            max-width: 1000px;
+            min-height: 600px;
+            position: relative;
+            background-color: #f9f9f9;
+            display: flex;
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #01579b;
+            color: white;
+            padding: 20px 0;
+            height: 100%;
+        }
+        .sidebar-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .sidebar-menu li {
+            padding: 10px 20px;
+            border-left: 3px solid transparent;
+        }
+        .sidebar-menu li.active {
+            background-color: #0277bd;
+            border-left: 3px solid #4fc3f7;
+        }
+        .main-content {
+            flex: 1;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+            border-bottom: 1px solid #ddd;
+            background-color: white;
+        }
+        .header-right {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        .notification {
+            width: 30px;
+            height: 30px;
+            background-color: #f5f5f5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .notification::after {
+            content: "";
+            width: 8px;
+            height: 8px;
+            background-color: #f44336;
+            border-radius: 50%;
+            position: absolute;
+            top: 5px;
+            right: 5px;
+        }
+        .user-profile {
+            width: 30px;
+            height: 30px;
+            background-color: #e0e0e0;
+            border-radius: 50%;
+        }
+        .dashboard-content {
+            padding: 20px;
+        }
+        .document-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .document-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+        .document-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .document-icon {
+            height: 120px;
+            background-color: #e3f2fd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .icon-placeholder {
+            width: 60px;
+            height: 60px;
+            background-color: #01579b;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .document-info {
+            padding: 15px;
+        }
+        .document-title {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        .document-description {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+            height: 60px;
+            overflow: hidden;
+        }
+        .document-actions {
+            display: flex;
+            gap: 10px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: #01579b;
+            color: white;
+            border-radius: 4px;
+            font-weight: 500;
+            cursor: pointer;
+            font-size: 14px;
+            text-align: center;
+        }
+        .btn.secondary {
+            background-color: #f5f5f5;
+            color: #333;
+            border: 1px solid #ddd;
+        }
+        .section-title {
+            font-size: 18px;
+            font-weight: 500;
+            margin: 30px 0 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+            color: #01579b;
+        }
+        .back-btn {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 15px;
+            background-color: #01579b;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        h1 {
+            color: #01579b;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cetak Dokumen - PPSB Wireframe</h1>
+        <a href="index.html" class="back-btn">← Kembali ke Daftar Wireframe</a>
+        
+        <div class="wireframe-container">
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <ul class="sidebar-menu">
+                    <li>Dashboard</li>
+                    <li>Data Santri</li>
+                    <li>Pembayaran</li>
+                    <li>Ujian</li>
+                    <li class="active">Cetak</li>
+                </ul>
+            </div>
+            
+            <!-- Main Content -->
+            <div class="main-content">
+                <!-- Header -->
+                <div class="header">
+                    <div>PPSB Santri</div>
+                    <div class="header-right">
+                        <div class="notification"></div>
+                        <div class="user-profile"></div>
+                        <div>Logout</div>
+                    </div>
+                </div>
+                
+                <!-- Dashboard Content -->
+                <div class="dashboard-content">
+                    <h2>Cetak Dokumen</h2>
+                    
+                    <div class="section-title">Dokumen Pendaftaran</div>
+                    <div class="document-grid">
+                        <div class="document-card">
+                            <div class="document-icon">
+                                <div class="icon-placeholder">F</div>
+                            </div>
+                            <div class="document-info">
+                                <div class="document-title">Formulir Pendaftaran</div>
+                                <div class="document-description">
+                                    Formulir pendaftaran yang telah diisi dengan data lengkap santri.
+                                </div>
+                                <div class="document-actions">
+                                    <div class="btn">Cetak</div>
+                                    <div class="btn secondary">Pratinjau</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="document-card">
+                            <div class="document-icon">
+                                <div class="icon-placeholder">K</div>
+                            </div>
+                            <div class="document-info">
+                                <div class="document-title">Kartu Peserta Ujian</div>
+                                <div class="document-description">
+                                    Kartu identitas peserta untuk mengikuti ujian seleksi masuk.
+                                </div>
+                                <div class="document-actions">
+                                    <div class="btn">Cetak</div>
+                                    <div class="btn secondary">Pratinjau</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="document-card">
+                            <div class="document-icon">
+                                <div class="icon-placeholder">B</div>
+                            </div>
+                            <div class="document-info">
+                                <div class="document-title">Bukti Pendaftaran</div>
+                                <div class="document-description">
+                                    Tanda bukti telah melakukan pendaftaran sebagai calon santri.
+                                </div>
+                                <div class="document-actions">
+                                    <div class="btn">Cetak</div>
+                                    <div class="btn secondary">Pratinjau</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section-title">Dokumen Pembayaran</div>
+                    <div class="document-grid">
+                        <div class="document-card">
+                            <div class="document-icon">
+                                <div class="icon-placeholder">K</div>
+                            </div>
+                            <div class="document-info">
+                                <div class="document-title">Kuitansi Biaya Pendaftaran</div>
+                                <div class="document-description">
+                                    Bukti pembayaran biaya pendaftaran yang telah diverifikasi.
+                                </div>
+                                <div class="document-actions">
+                                    <div class="btn">Cetak</div>
+                                    <div class="btn secondary">Pratinjau</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="document-card">
+                            <div class="document-icon">
+                                <div class="icon-placeholder">R</div>
+                            </div>
+                            <div class="document-info">
+                                <div class="document-title">Rincian Biaya</div>
+                                <div class="document-description">
+                                    Detail rincian biaya pendaftaran dan daftar ulang.
+                                </div>
+                                <div class="document-actions">
+                                    <div class="btn">Cetak</div>
+                                    <div class="btn secondary">Pratinjau</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section-title">Dokumen Hasil Seleksi</div>
+                    <div class="document-grid">
+                        <div class="document-card">
+                            <div class="document-icon">
+                                <div class="icon-placeholder">H</div>
+                            </div>
+                            <div class="document-info">
+                                <div class="document-title">Hasil Ujian</div>
+                                <div class="document-description">
+                                    Laporan hasil ujian seleksi masuk dengan nilai per mata uji.
+                                </div>
+                                <div class="document-actions">
+                                    <div class="btn">Cetak</div>
+                                    <div class="btn secondary">Pratinjau</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="document-card">
+                            <div class="document-icon">
+                                <div class="icon-placeholder">S</div>
+                            </div>
+                            <div class="document-info">
+                                <div class="document-title">Surat Keterangan Diterima</div>
+                                <div class="document-description">
+                                    Surat resmi yang menyatakan santri telah diterima di pesantren.
+                                </div>
+                                <div class="document-actions">
+                                    <div class="btn">Cetak</div>
+                                    <div class="btn secondary">Pratinjau</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="document-card">
+                            <div class="document-icon">
+                                <div class="icon-placeholder">P</div>
+                            </div>
+                            <div class="document-info">
+                                <div class="document-title">Panduan Daftar Ulang</div>
+                                <div class="document-description">
+                                    Petunjuk lengkap proses daftar ulang bagi santri yang diterima.
+                                </div>
+                                <div class="document-actions">
+                                    <div class="btn">Cetak</div>
+                                    <div class="btn secondary">Pratinjau</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <a href="index.html" class="back-btn">← Kembali ke Daftar Wireframe</a>
+    </div>
+</body>
+</html> 

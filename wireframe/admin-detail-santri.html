@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Santri - PPSB Wireframe</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .wireframe-container {
+            border: 2px solid #333;
+            margin: 20px auto;
+            max-width: 1000px;
+            min-height: 600px;
+            position: relative;
+            background-color: #f9f9f9;
+            display: flex;
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #263238;
+            color: white;
+            padding: 20px 0;
+            height: 100%;
+        }
+        .sidebar-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .sidebar-menu li {
+            padding: 10px 20px;
+            border-left: 3px solid transparent;
+        }
+        .sidebar-menu li.active {
+            background-color: #37474f;
+            border-left: 3px solid #4caf50;
+        }
+        .main-content {
+            flex: 1;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+            border-bottom: 1px solid #ddd;
+            background-color: white;
+        }
+        .header-right {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        .notification {
+            width: 30px;
+            height: 30px;
+            background-color: #f5f5f5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .notification::after {
+            content: "";
+            width: 8px;
+            height: 8px;
+            background-color: #f44336;
+            border-radius: 50%;
+            position: absolute;
+            top: 5px;
+            right: 5px;
+        }
+        .user-profile {
+            width: 30px;
+            height: 30px;
+            background-color: #e0e0e0;
+            border-radius: 50%;
+        }
+        .content {
+            padding: 20px;
+        }
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .page-title {
+            font-size: 24px;
+            font-weight: 500;
+        }
+        .btn-group {
+            display: flex;
+            gap: 10px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: #4caf50;
+            color: white;
+            border-radius: 4px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        .btn.secondary {
+            background-color: #2196f3;
+        }
+        .btn.danger {
+            background-color: #f44336;
+        }
+        .btn.warning {
+            background-color: #ff9800;
+        }
+        .tab-container {
+            margin-bottom: 20px;
+        }
+        .tabs {
+            display: flex;
+            border-bottom: 1px solid #ddd;
+        }
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            font-weight: 500;
+        }
+        .tab.active {
+            border-bottom: 2px solid #4caf50;
+            color: #4caf50;
+        }
+        .data-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        .data-header {
+            padding: 15px;
+            background-color: #4caf50;
+            color: white;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .data-header-actions {
+            display: flex;
+            gap: 10px;
+        }
+        .action-btn {
+            padding: 5px 10px;
+            background-color: rgba(255,255,255,0.2);
+            border-radius: 4px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+        .data-body {
+            padding: 15px;
+        }
+        .data-section {
+            margin-bottom: 20px;
+        }
+        .section-title {
+            font-weight: 500;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #eee;
+            color: #4caf50;
+        }
+        .data-row {
+            display: flex;
+            margin-bottom: 10px;
+            padding: 5px 0;
+        }
+        .data-label {
+            width: 30%;
+            font-weight: 500;
+            color: #555;
+        }
+        .data-value {
+            width: 70%;
+        }
+        .photo-container {
+            width: 150px;
+            height: 200px;
+            background-color: #e0e0e0;
+            border: 1px solid #ccc;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+        }
+        .status-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        .status-active {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+        .status-pending {
+            background-color: #fff3e0;
+            color: #e65100;
+        }
+        .status-rejected {
+            background-color: #ffebee;
+            color: #c62828;
+        }
+        .document-item {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        .document-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #e3f2fd;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2196f3;
+            margin-right: 15px;
+        }
+        .document-info {
+            flex: 1;
+        }
+        .document-name {
+            font-weight: 500;
+        }
+        .document-size {
+            font-size: 12px;
+            color: #777;
+        }
+        .document-actions {
+            display: flex;
+            gap: 10px;
+        }
+        .doc-btn {
+            padding: 5px 10px;
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+        .history-item {
+            display: flex;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .history-date {
+            width: 150px;
+            color: #777;
+            font-size: 14px;
+        }
+        .history-action {
+            flex: 1;
+        }
+        .history-user {
+            width: 150px;
+            text-align: right;
+            font-weight: 500;
+            color: #555;
+        }
+        .back-btn {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 15px;
+            background-color: #009688;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        h1 {
+            color: #009688;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Detail Santri - PPSB Wireframe</h1>
+        <a href="index.html" class="back-btn">← Kembali ke Daftar Wireframe</a>
+        
+        <div class="wireframe-container">
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <ul class="sidebar-menu">
+                    <li>Dashboard</li>
+                    <li class="active">Santri</li>
+                    <li>Pembayaran</li>
+                    <li>Gelombang</li>
+                    <li>WhatsApp</li>
+                    <li>Roles</li>
+                </ul>
+            </div>
+            
+            <!-- Main Content -->
+            <div class="main-content">
+                <!-- Header -->
+                <div class="header">
+                    <div>PPSB Admin</div>
+                    <div class="header-right">
+                        <div class="notification"></div>
+                        <div class="user-profile"></div>
+                        <div>Admin</div>
+                    </div>
+                </div>
+                
+                <!-- Content -->
+                <div class="content">
+                    <div class="page-header">
+                        <div class="page-title">Detail Santri</div>
+                        <div class="btn-group">
+                            <div class="btn secondary">Cetak Data</div>
+                            <div class="btn">Edit</div>
+                            <div class="btn danger">Hapus</div>
+                            <div class="btn warning">Kembali</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tab Navigation -->
+                    <div class="tab-container">
+                        <div class="tabs">
+                            <div class="tab active">Data Pribadi</div>
+                            <div class="tab">Dokumen</div>
+                            <div class="tab">Pembayaran</div>
+                            <div class="tab">Ujian</div>
+                            <div class="tab">Riwayat</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Status Info -->
+                    <div class="data-card">
+                        <div class="data-header">
+                            <div>Informasi Status</div>
+                        </div>
+                        <div class="data-body">
+                            <div class="data-row">
+                                <div class="data-label">Nomor Pendaftaran:</div>
+                                <div class="data-value">PPSB-2024-00123</div>
+                            </div>
+                            <div class="data-row">
+                                <div class="data-label">Status:</div>
+                                <div class="data-value">
+                                    <span class="status-badge status-active">Aktif</span>
+                                </div>
+                            </div>
+                            <div class="data-row">
+                                <div class="data-label">Unit:</div>
+                                <div class="data-value">SMP</div>
+                            </div>
+                            <div class="data-row">
+                                <div class="data-label">Gelombang:</div>
+                                <div class="data-value">Gelombang 1</div>
+                            </div>
+                            <div class="data-row">
+                                <div class="data-label">Tanggal Daftar:</div>
+                                <div class="data-value">01 Januari 2024</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Data Pribadi -->
+                    <div class="data-card">
+                        <div class="data-header">
+                            <div>Informasi Pribadi</div>
+                            <div class="data-header-actions">
+                                <div class="action-btn">Edit</div>
+                            </div>
+                        </div>
+                        <div class="data-body">
+                            <div class="data-section">
+                                <div class="photo-container">
+                                    Foto 3x4
+                                </div>
+                                
+                                <div class="data-row">
+                                    <div class="data-label">Nama Lengkap:</div>
+                                    <div class="data-value">Muhammad Budi Santoso</div>
+                                </div>
+                                
+                                <div class="data-row">
+                                    <div class="data-label">Tempat, Tanggal Lahir:</div>
+                                    <div class="data-value">Jakarta, 15 Januari 2010</div>
+                                </div>
+                                
+                                <div class="data-row">
+                                    <div class="data-label">Jenis Kelamin:</div>
+                                    <div class="data-value">Laki-laki</div>
+                                </div>
+                                
+                                <div class="data-row">
+                                    <div class="data-label">NIK:</div>
+                                    <div class="data-value">3201234567890001</div>
+                                </div>
+                                
+                                <div class="data-row">
+                                    <div class="data-label">Alamat:</div>
+                                    <div class="data-value">Jl. Merdeka No. 123, RT 02/RW 03, Kelurahan Sukamaju, Kecamatan Cilandak, Jakarta Selatan</div>
+                                </div>
+                                
+                                <div class="data-row">
+                                    <div class="data-label">No. Telepon:</div>
+                                    <div class="data-value">08123456789</div>
+                                </div>
+                                
+                                <div class="data-row">
+                                    <div class="data-label">Email:</div>
+                                    <div class="data-value">budi.santoso@email.com</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Data Pendidikan -->
+                    <div class="data-card">
+                        <div class="data-header">
+                            <div>Informasi Pendidikan</div>
+                            <div class="data-header-actions">
+                                <div class="action-btn">Edit</div>
+                            </div>
+                        </div>
+                        <div class="data-body">
+                            <div class="data-section">
+                                <div class="data-row">
+                                    <div class="data-label">Asal Sekolah:</div>
+                                    <div class="data-value">SD Negeri 1 Jakarta</div>
+                                </div>
+                                
+                                <div class="data-row">
+                                    <div class="data-label">NISN:</div>
+                                    <div class="data-value">0123456789</div>
+                                </div>
+                                
+                                <div class="data-row">
+                                    <div class="data-label">Tahun Lulus:</div>
+                                    <div class="data-value">2023</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Data Orang Tua -->
+                    <div class="data-card">
+                        <div class="data-header">
+                            <div>Informasi Orang Tua/Wali</div>
+                            <div class="data-header-actions">
+                                <div class="action-btn">Edit</div>
+                            </div>
+                        </div>
+                        <div class="data-body">
+                            <div class="data-section">
+                                <div class="section-title">Data Ayah</div>
+                                <div class="data-row">
+                                    <div class="data-label">Nama Ayah:</div>
+                                    <div class="data-value">Ahmad Santoso</div>
+                                </div>
+                                
+                                <div class="data-row">
+                                    <div class="data-label">NIK Ayah:</div>
+                                    <div class="data-value">3201234567890002</div>
+                                </div>
+                                
+                                <div class="data-row">
+                                    <div class="data-label">Pekerjaan:</div>
+                                    <div class="data-value">Karyawan Swasta</div>
+                                </div>
+                                
+                                <div class="data-row">
+                                    <div class="data-label">No. HP:</div>
+                                    <div class="data-value">08123456788</div>
+                                </div>
+                            </div>
+                            
+                            <div class="data-section">
+                                <div class="section-title">Data Ibu</div>
+                                <div class="data-row">
+                                    <div class="data-label">Nama Ibu:</div>
+                                    <div class="data-value">Siti Rahayu</div>
+                                </div>
+                                
+                                <div class="data-row">
+                                    <div class="data-label">NIK Ibu:</div>
+                                    <div class="data-value">3201234567890003</div>
+                                </div>
+                                
+                                <div class="data-row">
+                                    <div class="data-label">Pekerjaan:</div>
+                                    <div class="data-value">Guru</div>
+                                </div>
+                                
+                                <div class="data-row">
+                                    <div class="data-label">No. HP:</div>
+                                    <div class="data-value">08123456787</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Riwayat Aktivitas -->
+                    <div class="data-card">
+                        <div class="data-header">
+                            <div>Riwayat Aktivitas</div>
+                        </div>
+                        <div class="data-body">
+                            <div class="history-item">
+                                <div class="history-date">01/01/2024 10:30</div>
+                                <div class="history-action">Pendaftaran santri baru</div>
+                                <div class="history-user">Sistem</div>
+                            </div>
+                            <div class="history-item">
+                                <div class="history-date">01/01/2024 14:45</div>
+                                <div class="history-action">Upload dokumen pendukung</div>
+                                <div class="history-user">Muhammad Budi</div>
+                            </div>
+                            <div class="history-item">
+                                <div class="history-date">05/01/2024 09:15</div>
+                                <div class="history-action">Verifikasi data santri</div>
+                                <div class="history-user">Admin (Umar)</div>
+                            </div>
+                            <div class="history-item">
+                                <div class="history-date">10/01/2024 13:20</div>
+                                <div class="history-action">Konfirmasi pembayaran biaya pendaftaran</div>
+                                <div class="history-user">Admin (Fatimah)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <a href="index.html" class="back-btn">← Kembali ke Daftar Wireframe</a>
+    </div>
+</body>
+</html> 

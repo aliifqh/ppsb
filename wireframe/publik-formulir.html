@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Pendaftaran - PPSB Wireframe</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .wireframe-container {
+            border: 2px solid #333;
+            margin: 20px auto;
+            max-width: 800px;
+            min-height: 600px;
+            position: relative;
+            background-color: #f9f9f9;
+        }
+        .wireframe-section {
+            border: 1px solid #777;
+            padding: 15px;
+            margin-bottom: 10px;
+            background-color: #fff;
+            text-align: center;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+            border-bottom: 1px solid #777;
+            background-color: #f0f0f0;
+        }
+        .logo {
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .menu {
+            display: flex;
+            gap: 15px;
+        }
+        .menu-item {
+            border: 1px solid #aaa;
+            padding: 5px 10px;
+            border-radius: 3px;
+            background-color: #eee;
+        }
+        .form-title {
+            text-align: center;
+            padding: 15px 0;
+            font-size: 24px;
+            font-weight: bold;
+            color: #00796b;
+        }
+        .step-indicator {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .step {
+            width: 25%;
+            text-align: center;
+            position: relative;
+        }
+        .step.active {
+            font-weight: bold;
+            color: #009688;
+        }
+        .step-dot {
+            width: 20px;
+            height: 20px;
+            background-color: #ddd;
+            border-radius: 50%;
+            margin: 0 auto 5px;
+        }
+        .step.active .step-dot {
+            background-color: #009688;
+        }
+        .step::after {
+            content: "";
+            position: absolute;
+            top: 10px;
+            right: -50%;
+            width: 100%;
+            height: 2px;
+            background-color: #ddd;
+            z-index: 0;
+        }
+        .step:last-child::after {
+            display: none;
+        }
+        .form-container {
+            padding: 20px;
+            border: 1px solid #ddd;
+            margin: 0 15px 20px;
+            background-color: #fff;
+        }
+        .form-group {
+            display: flex;
+            margin-bottom: 15px;
+            align-items: center;
+            text-align: left;
+        }
+        .form-label {
+            width: 30%;
+            font-weight: 500;
+        }
+        .form-control {
+            width: 70%;
+            height: 35px;
+            border: 1px solid #ccc;
+            background-color: #f5f5f5;
+        }
+        .form-control.textarea {
+            height: 80px;
+        }
+        .form-control.radio {
+            display: flex;
+            height: auto;
+            border: none;
+            gap: 15px;
+        }
+        .radio-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .form-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #009688;
+            color: white;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .btn.back {
+            background-color: #9e9e9e;
+        }
+        .back-btn {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 15px;
+            background-color: #009688;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        h1 {
+            color: #009688;
+            text-align: center;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Formulir Pendaftaran - PPSB Wireframe</h1>
+        <a href="index.html" class="back-btn">← Kembali ke Daftar Wireframe</a>
+        
+        <div class="wireframe-container">
+            <!-- Header/Navbar -->
+            <div class="header">
+                <div class="logo">Logo PPSB</div>
+                <div class="menu">
+                    <div class="menu-item">Beranda</div>
+                    <div class="menu-item">Tentang</div>
+                    <div class="menu-item">Panduan</div>
+                    <div class="menu-item">Login</div>
+                </div>
+            </div>
+            
+            <!-- Form Title -->
+            <div class="form-title">Formulir Pendaftaran Santri Baru</div>
+            
+            <!-- Step Indicator -->
+            <div class="step-indicator">
+                <div class="step active">
+                    <div class="step-dot"></div>
+                    <div>Data Santri</div>
+                </div>
+                <div class="step">
+                    <div class="step-dot"></div>
+                    <div>Data Orang Tua</div>
+                </div>
+                <div class="step">
+                    <div class="step-dot"></div>
+                    <div>Upload Berkas</div>
+                </div>
+            </div>
+            
+            <!-- Tab 1: Data Santri -->
+            <div class="tab-content active">
+                <div class="form-container">
+                    <div class="form-group">
+                        <div class="form-label">Unit</div>
+                        <div class="form-control">[ Dropdown ]</div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-label">Nama Lengkap</div>
+                        <div class="form-control">[ Input text ]</div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-label">NISN</div>
+                        <div class="form-control">[ Input number ]</div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-label">Jenis Kelamin</div>
+                        <div class="form-control radio">
+                            <div class="radio-item">
+                                <div class="radio-dot"></div>
+                                <div>Laki-laki</div>
+                            </div>
+                            <div class="radio-item">
+                                <div class="radio-dot"></div>
+                                <div>Perempuan</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-label">Tempat Lahir</div>
+                        <div class="form-control">[ Input text ]</div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-label">Tanggal Lahir</div>
+                        <div class="form-control">[ Date picker ]</div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-label">Asal Sekolah</div>
+                        <div class="form-control">[ Input text ]</div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-label">Anak ke-</div>
+                        <div class="form-control">[ Input number ]</div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-label">Jumlah Saudara</div>
+                        <div class="form-control">[ Input number ]</div>
+                    </div>
+                    
+                    <div class="form-buttons">
+                        <div></div>
+                        <div class="btn">Lanjut »</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tab 2: Data Orang Tua (Hidden by default) -->
+            <div class="tab-content">
+                <div class="form-container">
+                    <div class="form-group">
+                        <div class="form-label">Nama Ayah</div>
+                        <div class="form-control">[ Input text ]</div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-label">Nama Ibu</div>
+                        <div class="form-control">[ Input text ]</div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-label">Pekerjaan Ayah</div>
+                        <div class="form-control">[ Dropdown ]</div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-label">Pekerjaan Ibu</div>
+                        <div class="form-control">[ Dropdown ]</div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-label">Pendidikan Ayah</div>
+                        <div class="form-control">[ Dropdown ]</div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-label">Pendidikan Ibu</div>
+                        <div class="form-control">[ Dropdown ]</div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-label">WhatsApp Ayah</div>
+                        <div class="form-control">[ Input tel ]</div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-label">WhatsApp Ibu</div>
+                        <div class="form-control">[ Input tel ]</div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-label">Alamat</div>
+                        <div class="form-control textarea">[ Textarea ]</div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-label">Provinsi</div>
+                        <div class="form-control">[ Dropdown ]</div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-label">Kabupaten</div>
+                        <div class="form-control">[ Dropdown ]</div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-label">Kecamatan</div>
+                        <div class="form-control">[ Dropdown ]</div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-label">Desa</div>
+                        <div class="form-control">[ Dropdown ]</div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-label">Kode Pos</div>
+                        <div class="form-control">[ Input number ]</div>
+                    </div>
+                    
+                    <div class="form-buttons">
+                        <div class="btn back">« Kembali</div>
+                        <div class="btn">Lanjut »</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tab 3: Upload Berkas (Hidden by default) -->
+            <div class="tab-content">
+                <div class="form-container">
+                    <div class="form-group">
+                        <div class="form-label">Pas Foto</div>
+                        <div class="form-control">[ File upload ]</div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-label">Akta Lahir</div>
+                        <div class="form-control">[ File upload ]</div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-label">Kartu Keluarga</div>
+                        <div class="form-control">[ File upload ]</div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-label">Ijazah</div>
+                        <div class="form-control">[ File upload ]</div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-label">Dokumen Lain</div>
+                        <div class="form-control">[ File upload ]</div>
+                    </div>
+                    
+                    <div class="form-buttons">
+                        <div class="btn back">« Kembali</div>
+                        <div class="btn">Kirim</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <a href="index.html" class="back-btn">← Kembali ke Daftar Wireframe</a>
+    </div>
+</body>
+</html> 
