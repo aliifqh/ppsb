@@ -21,3 +21,9 @@ yarn-error.log
 /.nova
 /.vscode
 /.zed
+
+# Windows system files
+desktop.ini
+Thumbs.db
+ehthumbs.db
+Desktop.ini
