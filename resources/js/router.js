@@ -11,7 +11,7 @@ import SantriPembayaran from './pages/santri/pembayaran/Pembayaran.vue';
 import SantriData from './pages/santri/data/Data.vue';
 import Home from './pages/Home.vue';
 import Formulir from './pages/Formulir.vue';
-import SantriLogin from './pages/SantriLogin.vue';
+import SantriLogin from './Pages/auth/LoginSantri.vue';
 
 const routes = [
   { path: '/', name: 'home', component: Home },
