@@ -1,20 +1,30 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import Login from './components/auth/Login.vue';
-import Dashboard from './components/admin/Dashboard.vue';
-import Pembayaran from './components/admin/pembayaran/Pembayaran.vue';
-import GelombangIndex from './components/admin/gelombang/GelombangIndex.vue';
-import RolesPermissions from './components/admin/RolesPermissions.vue';
-import Roles from './components/admin/roles/Roles.vue';
-import Santri from './components/admin/santri/Santri.vue';
-import SantriTrashed from './components/admin/santri/SantriTrashed.vue';
-import SantriPembayaran from './components/santri/pembayaran/Pembayaran.vue';
-import SantriData from './components/santri/data/Data.vue';
+import Login from './pages/auth/Login.vue';
+import Dashboard from './pages/admin/Dashboard.vue';
+import Pembayaran from './pages/admin/pembayaran/Pembayaran.vue';
+import GelombangIndex from './pages/admin/gelombang/GelombangIndex.vue';
+import RolesPermissions from './pages/admin/RolesPermissions.vue';
+import Roles from './pages/admin/roles/Roles.vue';
+import Santri from './pages/admin/santri/Santri.vue';
+import SantriTrashed from './pages/admin/santri/SantriTrashed.vue';
+import SantriPembayaran from './pages/santri/pembayaran/Pembayaran.vue';
+import SantriData from './pages/santri/data/Data.vue';
+import Home from './pages/Home.vue';
+import Formulir from './pages/Formulir.vue';
+import SantriLogin from './pages/SantriLogin.vue';
 
 const routes = [
+  { path: '/', name: 'home', component: Home },
+  { path: '/formulir', name: 'formulir', component: Formulir },
   {
     path: '/login',
     name: 'login',
     component: Login,
+  },
+  {
+    path: '/login-santri',
+    name: 'login-santri',
+    component: SantriLogin,
   },
   {
     path: '/admin/dashboard',

@@ -31,9 +31,9 @@
             <div class="space-y-4">
                 <h3 class="text-lg font-semibold text-gray-900">Link Cepat</h3>
                 <ul class="space-y-2">
-                    <li>
+                    <!-- <li>
                         <a href="{{ route('home') }}" class="text-gray-600 hover:text-emerald-500 text-sm">Beranda</a>
-                    </li>
+                    </li> -->
                     <li>
                         <a href="{{ route('registration.status') }}" class="text-gray-600 hover:text-emerald-500 text-sm">Cek Status</a>
                     </li>

@@ -37,11 +37,11 @@ document.addEventListener('DOMContentLoaded', function () {
             </a>
         </div>
         <!-- Navigation Menu -->
-        <div class="nav-container">
+        <!-- <div class="nav-container">
             <a href="{{ route('home') }}" class="nav-item {{ request()->routeIs('home') ? 'active' : '' }}">
                 <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" loading="lazy"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path d="M9 22V12h6v10"/></svg>
                 <span>Beranda</span>
-            </a>
+            </a> -->
             <a href="{{ route('formulir.index') }}" class="nav-item {{ request()->routeIs('formulir.index') ? 'active' : '' }}">
                 <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" loading="lazy"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
                 <span>Formulir</span>

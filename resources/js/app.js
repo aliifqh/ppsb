@@ -3,10 +3,10 @@ import '../app/js/formulir.js';
 import Swal from 'sweetalert2';
 import { createApp } from 'vue';
 import router from './router';
-import GelombangIndex from './components/admin/gelombang/GelombangIndex.vue';
-import Roles from './components/admin/roles/Roles.vue';
-import AdminNav from './components/admin/layout/AdminNav.vue';
-import UjianIndex from './components/santri/ujian/UjianIndex.vue';
+import GelombangIndex from './pages/admin/gelombang/GelombangIndex.vue';
+import Roles from './pages/admin/roles/Roles.vue';
+import AdminNav from './pages/admin/layout/AdminNav.vue';
+import UjianIndex from './pages/santri/ujian/UjianIndex.vue';
 
 // Konfigurasi SweetAlert2
 window.Swal = Swal;

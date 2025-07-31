@@ -129,9 +129,9 @@ Route::prefix('admin')->middleware(['auth'])->name('admin.')->group(function () 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/api/dashboard', [DashboardController::class, 'getData'])->name('dashboard.api');
 
-    // Notifications
-    Route::get('/notifications', [NotificationController::class, 'index'])->name('notifications.index');
-    Route::delete('/notifications/{id}', [NotificationController::class, 'destroy'])->name('notifications.destroy');
+    // // Notifications
+    // Route::get('/notifications', [NotificationController::class, 'index'])->name('notifications.index');
+    // Route::delete('/notifications/{id}', [NotificationController::class, 'destroy'])->name('notifications.destroy');
 
     // Santri API Routes
     Route::get('/santri/data', [SantriController::class, 'getApiData'])->name('santri.data');
@@ -164,7 +164,6 @@ Route::prefix('admin')->middleware(['auth'])->name('admin.')->group(function () 
     Route::post('/pembayaran/{pembayaran}/batalkan-verifikasi', [PembayaranController::class, 'batalkanVerifikasi'])->name('pembayaran.unverify');
     Route::post('/pembayaran/{pembayaran}/upload-bukti', [PembayaranController::class, 'uploadBukti'])->name('pembayaran.upload.bukti');
 
-    // Tes Masuk
 
     // Gelombang
     Route::get('/gelombang/api', [GelombangController::class, 'apiIndex'])->name('gelombang.api');
@@ -203,16 +202,7 @@ Route::prefix('api/admin')->middleware(['auth'])->group(function () {
 Route::get('/santri/magic-login/{token}', [\App\Http\Controllers\Santri\MagicLoginSantriController::class, 'magicLogin'])->name('santri.magic.login');
 
 // ================= ROUTE VIEW WHATSAPP TANPA BACKEND (KHUSUS FRONTEND/VIEW DOANG) =================
-Route::prefix('admin/whatsapp')->group(function () {
-    Route::view('/config', 'admin.whatsapp.whatsapp-config');
-    Route::view('/admin', 'admin.whatsapp.whatsapp-admin');
-    Route::view('/monitoring', 'admin.whatsapp.whatsapp-monitoring');
-    Route::view('/template', 'admin.whatsapp.whatsapp-template');
-    Route::view('/broadcast', 'admin.whatsapp.whatsapp-broadcast');
-    Route::view('/history', 'admin.whatsapp.whatsapp-history');
-    Route::view('/settings', 'admin.whatsapp.whatsapp-settings');
-});
-
+// Route WhatsApp view bisa diubah ke SPA jika sudah ada di frontend
 Route::get('/{any}', function () {
     return view('layouts.app');
 })->where('any', '.*');

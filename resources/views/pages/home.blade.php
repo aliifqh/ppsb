@@ -70,10 +70,10 @@
                     <div class="lg:w-1/2 relative">
                         <div class="relative">
                             <!-- Random Student Image -->
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop&crop=face" 
-                                 alt="Santri dengan prestasi" 
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop&crop=face"
+                                 alt="Santri dengan prestasi"
                                  class="w-80 h-96 object-cover rounded-2xl shadow-2xl">
-                            
+
                             <!-- Decorative Elements -->
                             <div class="absolute -top-4 -right-4 w-8 h-8 bg-yellow-400 rounded-full animate-pulse"></div>
                             <div class="absolute -bottom-2 -left-2 w-6 h-6 bg-yellow-400 rounded-full animate-pulse delay-1000"></div>
@@ -126,7 +126,6 @@
                         </div>
                     </div>
                 </div>
-
                 <!-- Right - Social Media -->
                 <div class="flex items-center space-x-4">
                     <p class="text-gray-600 font-medium">Share</p>
