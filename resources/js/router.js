@@ -1,77 +1,74 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import Login from './pages/auth/Login.vue';
-import Dashboard from './pages/admin/Dashboard.vue';
-import Pembayaran from './pages/admin/pembayaran/Pembayaran.vue';
-import GelombangIndex from './pages/admin/gelombang/GelombangIndex.vue';
-import RolesPermissions from './pages/admin/RolesPermissions.vue';
-import Roles from './pages/admin/roles/Roles.vue';
-import Santri from './pages/admin/santri/Santri.vue';
-import SantriTrashed from './pages/admin/santri/SantriTrashed.vue';
-import SantriPembayaran from './pages/santri/pembayaran/Pembayaran.vue';
-import SantriData from './pages/santri/data/Data.vue';
-import Home from './pages/Home.vue';
-import Formulir from './pages/Formulir.vue';
+import Login from './Pages/auth/Login.vue';
+import Dashboard from './Pages/admin/Dashboard.vue';
+import Pembayaran from './Pages/admin/pembayaran/Pembayaran.vue';
+import GelombangIndex from './Pages/admin/gelombang/GelombangIndex.vue';
+import RolesPermissions from './Pages/admin/RolesPermissions.vue';
+import Roles from './Pages/admin/roles/Roles.vue';
+import Santri from './Pages/admin/santri/Santri.vue';
+import SantriTrashed from './Pages/admin/santri/SantriTrashed.vue';
+import SantriPembayaran from './Pages/Santri/pembayaran/Pembayaran.vue';
+import SantriData from './Pages/Santri/data/Data.vue';
+import UjianIndex from './Pages/Santri/ujian/UjianIndex.vue';
+import Home from './Pages/Home.vue';
+import Formulir from './Pages/Formulir.vue';
 import SantriLogin from './Pages/auth/LoginSantri.vue';
+import AppLayout from './layouts/AppLayout.vue';
+import AdminLayout from './layouts/AdminLayout.vue';
 
 const routes = [
-  { path: '/', name: 'home', component: Home },
-  { path: '/formulir', name: 'formulir', component: Formulir },
   {
-    path: '/login',
-    name: 'login',
-    component: Login,
+    path: '/',
+    component: AppLayout,
+    children: [
+      { path: '', name: 'home', component: Home },
+      { path: 'formulir', name: 'formulir', component: Formulir },
+      { path: 'login', name: 'login', component: Login },
+      { path: 'login-santri', name: 'login-santri', component: SantriLogin },
+    ]
   },
   {
-    path: '/login-santri',
-    name: 'login-santri',
-    component: SantriLogin,
+    path: '/admin',
+    component: AdminLayout,
+    children: [
+      { path: 'dashboard', name: 'admin.dashboard', component: Dashboard },
+      { path: 'pembayaran', name: 'admin.pembayaran', component: Pembayaran },
+      { path: 'gelombang', name: 'admin.gelombang', component: GelombangIndex },
+      { path: 'roles-permissions', name: 'admin.roles-permissions', component: RolesPermissions },
+      { path: 'roles', name: 'admin.roles', component: Roles },
+      { path: 'santri', name: 'admin.santri', component: Santri },
+      { path: 'santri/trashed', name: 'admin.santri.trashed', component: SantriTrashed },
+    ]
   },
   {
-    path: '/admin/dashboard',
-    name: 'admin.dashboard',
-    component: Dashboard,
+    path: '/santri',
+    component: AppLayout,
+    children: [
+      {
+        path: 'pembayaran/:nomor_pendaftaran',
+        name: 'santri.pembayaran',
+        component: SantriPembayaran,
+        props: true
+      },
+      {
+        path: 'data/:nomor_pendaftaran',
+        name: 'santri.data',
+        component: SantriData,
+        props: true
+      },
+      {
+        path: 'ujian/:nomor_pendaftaran',
+        name: 'santri.ujian',
+        component: UjianIndex,
+        props: true
+      },
+    ]
   },
-  {
-    path: '/admin/pembayaran',
-    name: 'admin.pembayaran',
-    component: Pembayaran,
-  },
-  {
-    path: '/admin/gelombang',
-    name: 'admin.gelombang',
-    component: GelombangIndex,
-  },
-  {
-    path: '/admin/roles-permissions',
-    name: 'admin.roles-permissions',
-    component: RolesPermissions,
-  },
-  {
-    path: '/admin/roles',
-    name: 'admin.roles',
-    component: Roles,
-  },
-  {
-    path: '/admin/santri',
-    name: 'admin.santri',
-    component: Santri,
-  },
-  {
-    path: '/admin/santri/trashed',
-    name: 'admin.santri.trashed',
-    component: SantriTrashed,
-  },
-  {
-    path: '/santri/pembayaran/:nomor_pendaftaran',
-    name: 'santri.pembayaran',
-    component: SantriPembayaran,
-    props: true
-  },
-  {
-    path: '/santri/data/:nomor_pendaftaran',
-    name: 'santri.data',
-    component: SantriData,
-  }
+  // Redirect untuk route lama
+  { path: '/admin', redirect: '/admin/dashboard' },
+  { path: '/santri', redirect: '/santri/data' },
+  // Catch all route untuk SPA
+  { path: '/:pathMatch(.*)*', redirect: '/' }
 ];
 
 const router = createRouter({

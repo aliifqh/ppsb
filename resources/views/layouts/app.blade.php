@@ -15,13 +15,8 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="font-sans antialiased">
-    <div class="min-h-screen bg-gray-100">
-
-        <div id="app">
-            <router-view />
-        </div>
+    <div id="app">
+        <!-- Vue SPA akan di-mount di sini -->
     </div>
-
-    @livewireScripts
 </body>
 </html>

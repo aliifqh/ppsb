@@ -30,19 +30,11 @@ use App\Http\Controllers\InvoiceController;
 |
 */
 
-// ||||||||||||||| Navbar Public |||||||||||||||
-Route::get('/', function() {
-    return view('pages.home');
-})->name('home');
-
+// ||||||||||||||| API Routes untuk SPA |||||||||||||||
 // Routes Formulir Pendaftaran
-Route::get('/formulir', [FormulirController::class, 'create'])->name('formulir.index');
 Route::post('/formulir/store', [FormulirController::class, 'store'])->name('formulir.store');
 
 // Custom Login Routes
-Route::get('/login', function () {
-    return view('layouts.app'); // atau view SPA utama lo
-})->name('login');
 Route::post('/login', [LoginController::class, 'login'])->name('login.post');
 Route::get('auth/google', [LoginController::class, 'redirectToGoogle'])->name('google.login');
 Route::get('auth/google/callback', [LoginController::class, 'handleGoogleCallback'])->name('google.callback');
@@ -73,14 +65,6 @@ Route::post('/santri/logout', [DashboardSantriController::class, 'logout'])->nam
 
 // Routes Santri (Protected)
 Route::prefix('santri')->group(function () {
-    // Redirect ke cek pendaftaran jika belum login, atau ke dashboard jika sudah login
-    Route::get('/', function() {
-        if (session()->has('is_santri_logged_in')) {
-            return redirect()->route('santri.dashboard.index', ['nomor_pendaftaran' => session('nomor_pendaftaran')]);
-        }
-        return redirect()->route('santri.check.form');
-    })->name('santri.index');
-
     // Routes yang membutuhkan nomor pendaftaran
     Route::get('/dashboard/{nomor_pendaftaran}', [DashboardSantriController::class, 'index'])->name('santri.dashboard.index');
     Route::get('/data/{nomor_pendaftaran}', [FormulirController::class, 'index'])->name('santri.data');
@@ -104,14 +88,6 @@ Route::prefix('santri')->group(function () {
     Route::post('/upload-bukti-pendaftaran', [SantriPembayaranController::class, 'uploadBuktiPendaftaran'])->name('santri.upload-bukti-pendaftaran');
     Route::post('/upload-bukti-administrasi', [SantriPembayaranController::class, 'uploadBuktiAdministrasi'])->name('santri.upload-bukti-administrasi');
     Route::post('/upload-bukti-daftarulang', [SantriPembayaranController::class, 'uploadBuktiDaftarUlang'])->name('santri.upload-bukti-daftarulang');
-
-    // Catch all route untuk /santri/*
-    Route::fallback(function() {
-        if (session()->has('is_santri_logged_in')) {
-            return redirect()->route('santri.dashboard.index', ['nomor_pendaftaran' => session('nomor_pendaftaran')]);
-        }
-        return redirect()->route('santri.check.form');
-    });
 });
 
 Route::get('/santri/{santri}/print', [SantriPrintController::class, 'print'])
@@ -120,26 +96,12 @@ Route::get('/santri/{santri}/print', [SantriPrintController::class, 'print'])
 
 // ||||||||||||||| Routes Admin |||||||||||||||
 Route::prefix('admin')->middleware(['auth'])->name('admin.')->group(function () {
-    // Redirect /admin ke /admin/dashboard
-    Route::get('/', function () {
-        return redirect()->route('admin.dashboard');
-    });
-
-    // Dashboard
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-    Route::get('/api/dashboard', [DashboardController::class, 'getData'])->name('dashboard.api');
-
-    // // Notifications
-    // Route::get('/notifications', [NotificationController::class, 'index'])->name('notifications.index');
-    // Route::delete('/notifications/{id}', [NotificationController::class, 'destroy'])->name('notifications.destroy');
-
     // Santri API Routes
     Route::get('/santri/data', [SantriController::class, 'getApiData'])->name('santri.data');
     Route::get('/santri/trashed/data', [SantriController::class, 'getTrashedApiData'])->name('santri.trashed.data');
 
     // Santri
     Route::get('/santri/export', [SantriController::class, 'export'])->name('santri.export');
-    Route::get('/santri/trashed', [SantriController::class, 'trashed'])->name('santri.trashed');
     Route::post('/santri/{id}/restore', [SantriController::class, 'restore'])->name('santri.restore');
     Route::delete('/santri/{id}/force-delete', [SantriController::class, 'forceDelete'])->name('santri.force-delete');
     Route::post('/santri/bulk-delete', [SantriController::class, 'bulkDelete'])->name('santri.bulk-delete');
@@ -155,7 +117,6 @@ Route::prefix('admin')->middleware(['auth'])->name('admin.')->group(function () 
 
     // Pembayaran
     Route::get('/pembayaran/data', [PembayaranController::class, 'getApiData'])->name('pembayaran.data');
-    Route::get('/pembayaran', [PembayaranController::class, 'index'])->name('pembayaran.index');
     Route::get('/pembayaran/export', [PembayaranController::class, 'export'])->name('pembayaran.export');
     Route::get('/pembayaran/{pembayaran}', [PembayaranController::class, 'show'])->name('pembayaran.show');
     Route::get('/pembayaran/{pembayaran}/edit', [PembayaranController::class, 'edit'])->name('pembayaran.edit');
@@ -163,7 +124,6 @@ Route::prefix('admin')->middleware(['auth'])->name('admin.')->group(function () 
     Route::post('/pembayaran/{pembayaran}/verifikasi', [PembayaranController::class, 'verifikasi'])->name('pembayaran.verifikasi');
     Route::post('/pembayaran/{pembayaran}/batalkan-verifikasi', [PembayaranController::class, 'batalkanVerifikasi'])->name('pembayaran.unverify');
     Route::post('/pembayaran/{pembayaran}/upload-bukti', [PembayaranController::class, 'uploadBukti'])->name('pembayaran.upload.bukti');
-
 
     // Gelombang
     Route::get('/gelombang/api', [GelombangController::class, 'apiIndex'])->name('gelombang.api');
@@ -173,10 +133,6 @@ Route::prefix('admin')->middleware(['auth'])->name('admin.')->group(function () 
     // Roles
     Route::get('/roles', [RoleController::class, 'index'])->name('roles.index');
     Route::post('/roles/update-user-role/{user}', [RoleController::class, 'updateUserRole'])->name('roles.update-user-role');
-
-    // API Routes untuk Roles
-    Route::get('/api/users-with-roles', [RoleController::class, 'getUsersWithRoles'])->name('roles.api.users');
-    Route::get('/api/roles', [RoleController::class, 'getRoles'])->name('roles.api.roles');
 });
 
 Route::get('/invoice/{nomor_pendaftaran}/{jenis}', [InvoiceController::class, 'show'])
@@ -201,8 +157,7 @@ Route::prefix('api/admin')->middleware(['auth'])->group(function () {
 // Magic login santri
 Route::get('/santri/magic-login/{token}', [\App\Http\Controllers\Santri\MagicLoginSantriController::class, 'magicLogin'])->name('santri.magic.login');
 
-// ================= ROUTE VIEW WHATSAPP TANPA BACKEND (KHUSUS FRONTEND/VIEW DOANG) =================
-// Route WhatsApp view bisa diubah ke SPA jika sudah ada di frontend
+// ================= SPA ROUTE - SEMUA REQUEST KE SPA =================
 Route::get('/{any}', function () {
     return view('layouts.app');
 })->where('any', '.*');
