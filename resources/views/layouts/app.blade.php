@@ -15,7 +15,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="font-sans antialiased">
-    <div id="app">
+        <div id="app">
         <!-- Vue SPA akan di-mount di sini -->
     </div>
 </body>

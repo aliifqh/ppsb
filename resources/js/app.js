@@ -19,7 +19,9 @@ window.Toast = Swal.mixin({
 
 // Konfigurasi Vue SPA - mount ke element #app
 document.addEventListener('DOMContentLoaded', () => {
-    const app = createApp({});
+    const app = createApp({
+        template: '<router-view />'
+    });
     app.use(router);
     app.mount('#app');
 });
