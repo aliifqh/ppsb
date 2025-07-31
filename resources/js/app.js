@@ -5,7 +5,7 @@ import { createApp } from 'vue';
 import router from './router';
 import GelombangIndex from './pages/admin/gelombang/GelombangIndex.vue';
 import Roles from './pages/admin/roles/Roles.vue';
-import AdminNav from './pages/admin/layout/AdminNav.vue';
+import AdminNav from './layouts/AdminNav.vue';
 import UjianIndex from './pages/santri/ujian/UjianIndex.vue';
 
 // Konfigurasi SweetAlert2
